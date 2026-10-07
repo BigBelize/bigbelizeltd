@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BIG Belize Ltd. | Business Investment & BPO Solutions</title>
+    <meta name="description" content="Driving Operational Excellence & Business Growth in Belize. Premier Nearshore BPO, Contact Center, and Strategic Business Investment Solutions.">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        tealBrand: '#14b8a6',
+                        tealHover: '#0d9488',
+                        slateBrand: '#1e293b',
+                        darkCharcoal: '#0f172a',
+                        coralAccent: '#f43f5e',
+                        coralHover: '#e11d48',
+                        lightBg: '#f8fafc'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts & Font Awesome Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS for dynamic touches -->
+    <style>
+        .hero-gradient {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 60%, #0f766e 100%);
+        }
+        .coral-gradient-btn {
+            background: linear-gradient(135deg, #f43f5e 0%, #e11d48 100%);
+        }
+        .coral-gradient-btn:hover {
+            background: linear-gradient(135deg, #e11d48 0%, #be123c 100%);
+        }
+        .teal-gradient-btn {
+            background: linear-gradient(135deg, #14b8a6 0%, #0d9488 100%);
+        }
+        .teal-gradient-btn:hover {
+            background: linear-gradient(135deg, #0d9488 0%, #0f766e 100%);
+        }
+        .card-hover-effect {
+            transition: all 0.3s ease-in-out;
+        }
+        .card-hover-effect:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+    </style>
+</head>
+<body class="font-sans text-slate-800 bg-lightBg flex flex-col min-h-screen selection:bg-tealBrand selection:text-white">
+
+    <!-- Fixed Navigation Bar -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-slateBrand/95 backdrop-blur-md border-b border-slate-700/50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Company Logo Text -->
+                <a href="#" class="flex items-center space-x-3 group">
+                    <div class="w-10 h-10 rounded-xl bg-tealBrand flex items-center justify-center font-extrabold text-slateBrand text-xl shadow-lg group-hover:bg-coralAccent transition-colors">
+                        B
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="text-2xl font-extrabold tracking-tight text-white">
+                            BIG <span class="text-tealBrand group-hover:text-coralAccent transition-colors">Belize</span>
+                        </span>
+                        <span class="text-[10px] text-slate-400 font-medium tracking-widest uppercase -mt-1">Business Investment Group</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Quick Links -->
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="#about" class="text-sm font-medium text-slate-200 hover:text-tealBrand transition-colors">About Us</a>
+                    <a href="#services" class="text-sm font-medium text-slate-200 hover:text-tealBrand transition-colors">Services</a>
+                    <a href="#bpo" class="text-sm font-medium text-slate-200 hover:text-tealBrand transition-colors">BPO Solutions</a>
+                    <a href="#metrics" class="text-sm font-medium text-slate-200 hover:text-tealBrand transition-colors">Why Belize</a>
+                    <a href="#contact" class="coral-gradient-btn text-white text-sm font-semibold px-5 py-2.5 rounded-lg shadow-md hover:shadow-coralAccent/20 transition-all">
+                        Get in Touch
+                    </a>
+                </nav>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" type="button" class="text-slate-300 hover:text-white focus:outline-none p-2 rounded-lg" aria-label="Toggle navigation menu">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-slateBrand border-b border-slate-700 px-4 pt-2 pb-6 space-y-3">
+            <a href="#about" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-slate-200 hover:bg-slate-800 hover:text-tealBrand">About Us</a>
+            <a href="#services" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-slate-200 hover:bg-slate-800 hover:text-tealBrand">Services</a>
+            <a href="#bpo" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-slate-200 hover:bg-slate-800 hover:text-tealBrand">BPO Solutions</a>
+            <a href="#metrics" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-slate-200 hover:bg-slate-800 hover:text-tealBrand">Why Belize</a>
+            <a href="#contact" class="mobile-nav-link block w-full text-center coral-gradient-btn text-white font-semibold py-3 rounded-lg shadow-md mt-4">
+                Get in Touch
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient text-white pt-32 pb-20 md:pt-40 md:pb-28 relative overflow-hidden">
+        <!-- Subtle decorative background SVG shapes -->
+        <div class="absolute inset-0 opacity-10 pointer-events-none">
+            <div class="absolute -top-24 -right-24 w-96 h-96 rounded-full bg-tealBrand filter blur-3xl"></div>
+            <div class="absolute bottom-0 left-10 w-80 h-80 rounded-full bg-coralAccent filter blur-3xl"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Hero Left Text Content -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center space-x-2 bg-tealBrand/10 border border-tealBrand/30 rounded-full px-4 py-1.5 text-xs sm:text-sm font-semibold text-tealBrand">
+                        <span class="flex h-2 w-2 rounded-full bg-tealBrand animate-pulse"></span>
+                        <span>Premier Business Investment & Nearshore BPO in Belize</span>
+                    </div>
+
+                    <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight">
+                        Driving <span class="text-transparent bg-clip-text bg-gradient-to-r from-tealBrand to-teal-300">Operational Excellence</span> & Business Growth in Belize
+                    </h1>
+
+                    <p class="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed">
+                        BIG Belize Ltd. connects international organizations with world-class nearshore BPO operations, strategic investment execution, and high-performance talent in Central America.
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
+                        <a href="#contact" class="w-full sm:w-auto coral-gradient-btn text-white font-bold px-8 py-4 rounded-xl shadow-lg shadow-coralAccent/25 hover:shadow-xl transition-all text-center flex items-center justify-center space-x-2">
+                            <span>Get in Touch</span>
+                            <i class="fa-solid fa-arrow-right text-sm"></i>
+                        </a>
+                        <a href="#services" class="w-full sm:w-auto bg-slate-800/80 hover:bg-slate-700 text-slate-200 border border-slate-600 font-semibold px-8 py-4 rounded-xl transition-all text-center flex items-center justify-center">
+                            Our Services
+                        </a>
+                    </div>
+
+                    <!-- Highlight Badges -->
+                    <div class="pt-6 grid grid-cols-3 gap-4 border-t border-slate-700/60 max-w-lg mx-auto lg:mx-0">
+                        <div>
+                            <p class="text-2xl font-extrabold text-tealBrand">100%</p>
+                            <p class="text-xs text-slate-400">English Native Market</p>
+                        </div>
+                        <div>
+                            <p class="text-2xl font-extrabold text-white">CST / EST</p>
+                            <p class="text-xs text-slate-400">Time Zone Alignment</p>
+                        </div>
+                        <div>
+                            <p class="text-2xl font-extrabold text-coralAccent">Nearshore</p>
+                            <p class="text-xs text-slate-400">Cost Efficiency</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hero Right Interactive/Visual Showcase -->
+                <div class="lg:col-span-5">
+                    <div class="relative mx-auto max-w-md lg:max-w-none bg-slate-800/90 rounded-2xl border border-slate-700 p-6 sm:p-8 shadow-2xl">
+                        <div class="flex items-center justify-between border-b border-slate-700 pb-4 mb-6">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-3 h-3 rounded-full bg-coralAccent"></div>
+                                <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                                <div class="w-3 h-3 rounded-full bg-tealBrand"></div>
+                            </div>
+                            <span class="text-xs font-mono text-slate-400">BIG-Belize-Operations.v2</span>
+                        </div>
+
+                        <div class="space-y-4 text-sm">
+                            <div class="p-4 rounded-xl bg-slate-900/80 border border-slate-800 flex items-start space-x-4">
+                                <div class="p-3 bg-tealBrand/10 rounded-lg text-tealBrand">
+                                    <i class="fa-solid fa-headset text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-white">BPO & Contact Center</h4>
+                                    <p class="text-xs text-slate-400 mt-1">Inbound, Outbound, Omnichannel Support & Back Office.</p>
+                                </div>
+                            </div>
+
+                            <div class="p-4 rounded-xl bg-slate-900/80 border border-slate-800 flex items-start space-x-4">
+                                <div class="p-3 bg-coralAccent/10 rounded-lg text-coralAccent">
+                                    <i class="fa-solid fa-chart-line text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-white">Business Investment</h4>
+                                    <p class="text-xs text-slate-400 mt-1">Market entry, joint ventures, and strategic advisory in Belize.</p>
+                                </div>
+                            </div>
+
+                            <div class="p-4 rounded-xl bg-slate-900/80 border border-slate-800 flex items-start space-x-4">
+                                <div class="p-3 bg-tealBrand/10 rounded-lg text-tealBrand">
+                                    <i class="fa-solid fa-users text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-white">Turnkey Nearshore Teams</h4>
+                                    <p class="text-xs text-slate-400 mt-1">Rapid scaling with educated, cultural-fit bilingual talent.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-6 pt-4 border-t border-slate-700/60 flex items-center justify-between text-xs text-slate-400">
+                            <span><i class="fa-solid fa-location-dot text-tealBrand mr-1"></i> Belize City, Belize</span>
+                            <span class="text-tealBrand font-medium">Ready to Deploy</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Metrics / Highlights Section -->
+    <section id="metrics" class="py-16 bg-white border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <h2 class="text-xs font-bold uppercase tracking-widest text-tealBrand mb-2">The Belize Advantage</h2>
+                <p class="text-3xl font-extrabold text-darkCharcoal tracking-tight">Why Leading Companies Choose BIG Belize</p>
+                <p class="text-slate-600 mt-3 text-base">Belize combines geographic proximity, native English proficiency, and economic alignment for effortless scalability.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Highlight 1 -->
+                <div class="p-6 rounded-2xl bg-lightBg border border-slate-200/80 card-hover-effect text-center">
+                    <div class="w-14 h-14 bg-tealBrand/10 text-tealBrand rounded-2xl flex items-center justify-center mx-auto mb-4 text-2xl">
+                        <i class="fa-solid fa-language"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slateBrand mb-2">Native English Talent</h3>
+                    <p class="text-sm text-slate-600">Belize is the only official English-speaking country in Central America, eliminating cultural and linguistic barriers.</p>
+                </div>
+
+                <!-- Highlight 2 -->
+                <div class="p-6 rounded-2xl bg-lightBg border border-slate-200/80 card-hover-effect text-center">
+                    <div class="w-14 h-14 bg-coralAccent/10 text-coralAccent rounded-2xl flex items-center justify-center mx-auto mb-4 text-2xl">
+                        <i class="fa-solid fa-clock"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slateBrand mb-2">Nearshore Time Zone</h3>
+                    <p class="text-sm text-slate-600">Operate seamlessly in real-time with North American clients across Central and Eastern time zones.</p>
+                </div>
+
+                <!-- Highlight 3 -->
+                <div class="p-6 rounded-2xl bg-lightBg border border-slate-200/80 card-hover-effect text-center">
+                    <div class="w-14 h-14 bg-tealBrand/10 text-tealBrand rounded-2xl flex items-center justify-center mx-auto mb-4 text-2xl">
+                        <i class="fa-solid fa-expand"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slateBrand mb-2">Scalable Solutions</h3>
+                    <p class="text-sm text-slate-600">Flexible infrastructure and talent solutions engineered to scale up quickly based on operational demand.</p>
+                </div>
+
+                <!-- Highlight 4 -->
+                <div class="p-6 rounded-2xl bg-lightBg border border-slate-200/80 card-hover-effect text-center">
+                    <div class="w-14 h-14 bg-coralAccent/10 text-coralAccent rounded-2xl flex items-center justify-center mx-auto mb-4 text-2xl">
+                        <i class="fa-solid fa-hand-holding-dollar"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slateBrand mb-2">Strategic Cost Value</h3>
+                    <p class="text-sm text-slate-600">Achieve up to 50-60% cost savings compared to US/Canada operational standards without compromising quality.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Grid Section -->
+    <section id="services" class="py-20 bg-lightBg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs font-bold uppercase tracking-widest text-tealBrand mb-2">Our Core Offerings</h2>
+                <p class="text-3xl sm:text-4xl font-extrabold text-darkCharcoal tracking-tight">Comprehensive Business Solutions</p>
+                <p class="text-slate-600 mt-4 text-base">From front-line customer engagement to high-level strategic investments, BIG Belize delivers end-to-end execution.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <!-- Service 1: BPO & Contact Center -->
+                <div id="bpo" class="bg-white rounded-2xl p-8 border border-slate-200 card-hover-effect flex flex-col justify-between shadow-sm">
+                    <div>
+                        <div class="w-16 h-16 rounded-xl bg-slateBrand text-tealBrand flex items-center justify-center text-3xl mb-6 shadow-md">
+                            <i class="fa-solid fa-headset"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-slateBrand mb-4">BPO & Contact Center Operations</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                            Tailored nearshore customer experience solutions built around your operational goals. We handle technical support, sales, and multi-channel care with precision.
+                        </p>
+                        <ul class="space-y-3 text-sm text-slate-700 mb-8">
+                            <li class="flex items-center"><i class="fa-solid fa-circle-check text-tealBrand mr-3"></i>Inbound Customer Care & Technical Helpdesk</li>
+                            <li class="flex items-center"><i class="fa-solid fa-circle-check text-tealBrand mr-3"></i>Outbound Telemarketing & Lead Gen</li>
+                            <li class="flex items-center"><i class="fa-solid fa-circle-check text-tealBrand mr-3"></i>Omnichannel (Chat, Email, Voice, SMS)</li>
+                            <li class="flex items-center"><i class="fa-solid fa-circle-check text-tealBrand mr-3"></i>Back Office & Data Processing</li>
+                        </ul>
+                    </div>
+                    <a href="#contact" class="inline-flex items-center justify-center font-semibold text-tealBrand hover:text-tealHover transition-colors text-sm group">
+                        <span>Learn More about BPO</span>
+                        <i class="fa-solid fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                </div>
+
+                <!-- Service 2: Executive Consulting -->
+                <div class="bg-white rounded-2xl p-8 border border-slate-200 card-hover-effect flex flex-col justify-between shadow-sm">
+                    <div>
+                        <div class="w-16 h-16 rounded-xl bg-slateBrand text-coralAccent flex items-center justify-center text-3xl mb-6 shadow-md">
+                            <i class="fa-solid fa-chart-pie"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-slateBrand mb-4">Executive Consulting & Strategy</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                            Navigating operational efficiency and business expansion. Our executive team offers advisory services designed to optimize workflows and manage risk.
+                        </p>
+                        <ul class="space-y-3 text-sm text-slate-700 mb-8">
+                            <li class="flex items-center"><i class="fa-solid fa-circle-check text-coralAccent mr-3"></i>Operational Audit & Optimization</li>
+                            <li class="flex items-center"><i class="fa-solid fa-circle-check text-coralAccent mr-3"></i>Nearshore Migration Strategy</li>
+                            <li class="flex items-center"><i class="fa-solid fa-circle-check text-coralAccent mr-3"></i>Regulatory & Compliance Advisory</li>
+                            <li class="flex items-center"><i class="fa-solid fa-circle-check text-coralAccent mr-3"></i>Performance & QA Architecture</li>
+                        </ul>
+                    </div>
+                    <a href="#contact" class="inline-flex items-center justify-center font-semibold text-coralAccent hover:text-coralHover transition-colors text-sm group">
+                        <span>Schedule Consulting</span>
+                        <i class="fa-solid fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                </div>
+
+                <!-- Service 3: Business Investment & Growth -->
+                <div class="bg-white rounded-2xl p-8 border border-slate-200 card-hover-effect flex flex-col justify-between shadow-sm">
+                    <div>
+                        <div class="w-16 h-16 rounded-xl bg-slateBrand text-tealBrand flex items-center justify-center text-3xl mb-6 shadow-md">
+                            <i class="fa-solid fa-building-circle-arrow-right"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-slateBrand mb-4">Business Investment & Growth</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                            Capitalizing on Belize's vibrant economic ecosystem. We facilitate foreign direct investment, asset management, and joint-venture opportunities.
+                        </p>
+                        <ul class="space-y-3 text-sm text-slate-700 mb-8">
+                            <li class="flex items-center"><i class="fa-solid fa-circle-check text-tealBrand mr-3"></i>Market Entry & Local Partnership</li>
+                            <li class="flex items-center"><i class="fa-solid fa-circle-check text-tealBrand mr-3"></i>Commercial Real Estate & Infrastructure</li>
+                            <li class="flex items-center"><i class="fa-solid fa-circle-check text-tealBrand mr-3"></i>Joint Ventures & Equity Investments</li>
+                            <li class="flex items-center"><i class="fa-solid fa-circle-check text-tealBrand mr-3"></i>Government Liaison & Incentives</li>
+                        </ul>
+                    </div>
+                    <a href="#contact" class="inline-flex items-center justify-center font-semibold text-tealBrand hover:text-tealHover transition-colors text-sm group">
+                        <span>Explore Opportunities</span>
+                        <i class="fa-solid fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="py-20 bg-slateBrand text-white relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <div class="lg:col-span-6 space-y-6">
+                    <h2 class="text-xs font-bold uppercase tracking-widest text-tealBrand">About BIG Belize Ltd.</h2>
+                    <h3 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Your Trusted Nearshore Partner & Growth Catalyst</h3>
+                    <p class="text-slate-300 leading-relaxed text-base">
+                        BIG Belize Ltd. (Business Investment Group) stands at the intersection of operational excellence and strategic economic development in Belize. We empower global businesses to reduce operating costs while enhancing service delivery through our state-of-the-art contact center capabilities and deep regional investment insights.
+                    </p>
+                    <p class="text-slate-300 leading-relaxed text-base">
+                        Headquartered in Belize City, our leadership team combines decades of international business experience with localized operational intelligence. We are committed to fostering economic growth in Belize while providing global companies with a reliable, high-value nearshore destination.
+                    </p>
+
+                    <div class="grid grid-cols-2 gap-6 pt-4">
+                        <div class="border-l-4 border-tealBrand pl-4">
+                            <p class="font-bold text-white text-lg">Operational Rigor</p>
+                            <p class="text-xs text-slate-400 mt-1">Strict adherence to global KPIs, quality assurance, and compliance standards.</p>
+                        </div>
+                        <div class="border-l-4 border-coralAccent pl-4">
+                            <p class="font-bold text-white text-lg">Strategic Location</p>
+                            <p class="text-xs text-slate-400 mt-1">Proximity to North America with direct flight connectivity and shared time zones.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-6">
+                    <div class="relative rounded-2xl bg-slate-800 p-8 border border-slate-700 shadow-xl space-y-6">
+                        <div class="flex items-center space-x-4 border-b border-slate-700 pb-6">
+                            <div class="w-14 h-14 rounded-full bg-tealBrand/20 flex items-center justify-center text-tealBrand text-2xl">
+                                <i class="fa-solid fa-globe"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold text-white">Why Nearshore in Belize?</h4>
+                                <p class="text-xs text-slate-400">The premier location for North American businesses</p>
+                            </div>
+                        </div>
+
+                        <div class="space-y-4">
+                            <div class="flex items-start space-x-3">
+                                <i class="fa-solid fa-check-circle text-tealBrand mt-1"></i>
+                                <p class="text-sm text-slate-300"><strong class="text-white">English Fluency:</strong> Belize boasts an English-speaking populace with neutral accents, perfect for voice and complex customer engagements.</p>
+                            </div>
+                            <div class="flex items-start space-x-3">
+                                <i class="fa-solid fa-check-circle text-tealBrand mt-1"></i>
+                                <p class="text-sm text-slate-300"><strong class="text-white">Cultural Affinity:</strong> Deep familiarity with Western business practices, pop culture, and consumer expectations.</p>
+                            </div>
+                            <div class="flex items-start space-x-3">
+                                <i class="fa-solid fa-check-circle text-tealBrand mt-1"></i>
+                                <p class="text-sm text-slate-300"><strong class="text-white">Robust Infrastructure:</strong> High-speed redundant telecom connectivity and modern commercial facilities in Belize City.</p>
+                            </div>
+                        </div>
+
+                        <div class="bg-slate-900/90 rounded-xl p-4 text-center border border-slate-800">
+                            <p class="text-xs text-slate-400">Looking for immediate operational support?</p>
+                            <a href="#contact" class="inline-block mt-2 text-xs font-bold text-tealBrand hover:text-white uppercase tracking-wider">Connect with our Executive Leadership &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form & Location Details Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs font-bold uppercase tracking-widest text-tealBrand mb-2">Get In Touch</h2>
+                <p class="text-3xl sm:text-4xl font-extrabold text-darkCharcoal tracking-tight">Start Your Conversation With BIG Belize</p>
+                <p class="text-slate-600 mt-4 text-base">Ready to scale your contact center or explore strategic investment opportunities in Belize? Our team is standing by.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                
+                <!-- Contact Details / Info Cards -->
+                <div class="lg:col-span-5 space-y-6">
+                    <div class="bg-lightBg rounded-2xl p-8 border border-slate-200">
+                        <h3 class="text-xl font-bold text-slateBrand mb-6">Contact Information</h3>
+
+                        <div class="space-y-6">
+                            <!-- Location -->
+                            <div class="flex items-start space-x-4">
+                                <div class="w-10 h-10 rounded-lg bg-tealBrand/10 text-tealBrand flex items-center justify-center shrink-0 text-lg">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-sm font-bold text-slateBrand">Headquarters Location</h4>
+                                    <p class="text-sm text-slate-600 mt-0.5">Belize City, Belize, C.A.</p>
+                                </div>
+                            </div>
+
+                            <!-- Emails -->
+                            <div class="flex items-start space-x-4">
+                                <div class="w-10 h-10 rounded-lg bg-coralAccent/10 text-coralAccent flex items-center justify-center shrink-0 text-lg">
+                                    <i class="fa-solid fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-sm font-bold text-slateBrand">Email Us</h4>
+                                    <p class="text-sm text-slate-600 mt-0.5">
+                                        <a href="mailto:info@bigbelizeltd.com" class="hover:text-tealBrand transition-colors">info@bigbelizeltd.com</a>
+                                    </p>
+                                    <p class="text-sm text-slate-600">
+                                        <a href="mailto:winston@bigbelizeltd.com" class="hover:text-tealBrand transition-colors">winston@bigbelizeltd.com</a>
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Business Hours -->
+                            <div class="flex items-start space-x-4">
+                                <div class="w-10 h-10 rounded-lg bg-tealBrand/10 text-tealBrand flex items-center justify-center shrink-0 text-lg">
+                                    <i class="fa-solid fa-clock"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-sm font-bold text-slateBrand">Operating Hours</h4>
+                                    <p class="text-sm text-slate-600 mt-0.5">Monday – Friday: 8:00 AM – 5:00 PM (CST)</p>
+                                    <p class="text-xs text-slate-400">24/7 BPO support services available</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Direct Email Callout Card -->
+                    <div class="bg-slateBrand text-white rounded-2xl p-8 border border-slate-700 relative overflow-hidden">
+                        <div class="relative z-10">
+                            <h4 class="text-lg font-bold mb-2">Executive Inquiries</h4>
+                            <p class="text-sm text-slate-300 mb-4">Direct correspondence for major enterprise BPO deployments or high-level investment discussions.</p>
+                            <a href="mailto:winston@bigbelizeltd.com" class="inline-flex items-center text-sm font-semibold text-tealBrand hover:text-teal-300">
+                                <span>Email Winston Directly</span>
+                                <i class="fa-solid fa-arrow-right ml-2 text-xs"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Interactive Form -->
+                <div class="lg:col-span-7">
+                    <div class="bg-white rounded-2xl p-8 border border-slate-200 shadow-lg">
+                        <h3 class="text-2xl font-bold text-slateBrand mb-2">Send Us a Message</h3>
+                        <p class="text-sm text-slate-500 mb-6">Fill out the form below and an executive representative will reach out within 24 hours.</p>
+
+                        <!-- Notification Box -->
+                        <div id="form-message" class="hidden mb-6 p-4 rounded-xl text-sm font-medium"></div>
+
+                        <form id="contact-form" class="space-y-5" onsubmit="handleFormSubmit(event)">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                                <div>
+                                    <label for="first-name" class="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-2">First Name *</label>
+                                    <input type="text" id="first-name" required class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-tealBrand focus:border-tealBrand text-sm outline-none transition-all" placeholder="John">
+                                </div>
+                                <div>
+                                    <label for="last-name" class="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-2">Last Name *</label>
+                                    <input type="text" id="last-name" required class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-tealBrand focus:border-tealBrand text-sm outline-none transition-all" placeholder="Doe">
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                                <div>
+                                    <label for="email" class="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-2">Business Email *</label>
+                                    <input type="email" id="email" required class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-tealBrand focus:border-tealBrand text-sm outline-none transition-all" placeholder="john@company.com">
+                                </div>
+                                <div>
+                                    <label for="phone" class="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-2">Phone Number</label>
+                                    <input type="tel" id="phone" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-tealBrand focus:border-tealBrand text-sm outline-none transition-all" placeholder="+1 (555) 000-0000">
+                                </div>
+                            </div>
+
+                            <div>
+                                <label for="interest" class="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-2">Area of Interest *</label>
+                                <select id="interest" required class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-tealBrand focus:border-tealBrand text-sm outline-none transition-all bg-white text-slate-700">
+                                    <option value="" disabled selected>Select an option</option>
+                                    <option value="bpo">BPO & Call Center Operations</option>
+                                    <option value="consulting">Executive Consulting</option>
+                                    <option value="investment">Business Investment Opportunities</option>
+                                    <option value="other">Other Inquiry</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label for="message" class="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-2">Message *</label>
+                                <textarea id="message" rows="4" required class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-tealBrand focus:border-tealBrand text-sm outline-none transition-all" placeholder="Tell us about your organization and project requirements..."></textarea>
+                            </div>
+
+                            <button type="submit" class="w-full coral-gradient-btn text-white font-bold py-4 rounded-xl shadow-lg hover:shadow-coralAccent/20 transition-all flex items-center justify-center space-x-2 text-sm uppercase tracking-wider">
+                                <span>Send Message</span>
+                                <i class="fa-solid fa-paper-plane text-xs"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="bg-darkCharcoal text-slate-400 py-12 border-t border-slate-800 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 pb-12 border-b border-slate-800">
+                
+                <!-- Col 1: Brand Info -->
+                <div class="md:col-span-2 space-y-4">
+                    <a href="#" class="flex items-center space-x-3">
+                        <div class="w-8 h-8 rounded-lg bg-tealBrand flex items-center justify-center font-extrabold text-slateBrand text-lg">
+                            B
+                        </div>
+                        <span class="text-xl font-extrabold tracking-tight text-white">
+                            BIG <span class="text-tealBrand">Belize</span> Ltd.
+                        </span>
+                    </a>
+                    <p class="text-sm text-slate-400 max-w-sm leading-relaxed">
+                        Driving Operational Excellence & Business Growth in Belize. Enabling organizations worldwide through superior BPO and investment strategies.
+                    </p>
+                    <div class="text-xs text-slate-400">
+                        <p><i class="fa-solid fa-location-dot text-tealBrand mr-2"></i>Belize City, Belize</p>
+                    </div>
+                </div>
+
+                <!-- Col 2: Navigation -->
+                <div>
+                    <h4 class="text-white font-bold text-sm uppercase tracking-wider mb-4">Quick Links</h4>
+                    <ul class="space-y-2.5 text-sm">
+                        <li><a href="#about" class="hover:text-tealBrand transition-colors">About Us</a></li>
+                        <li><a href="#services" class="hover:text-tealBrand transition-colors">Services</a></li>
+                        <li><a href="#bpo" class="hover:text-tealBrand transition-colors">BPO Solutions</a></li>
+                        <li><a href="#metrics" class="hover:text-tealBrand transition-colors">The Belize Advantage</a></li>
+                        <li><a href="#contact" class="hover:text-tealBrand transition-colors">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Direct Contact -->
+                <div>
+                    <h4 class="text-white font-bold text-sm uppercase tracking-wider mb-4">Direct Contact</h4>
+                    <ul class="space-y-2.5 text-sm">
+                        <li class="flex items-center space-x-2">
+                            <i class="fa-solid fa-envelope text-tealBrand text-xs"></i>
+                            <a href="mailto:info@bigbelizeltd.com" class="hover:text-white transition-colors">info@bigbelizeltd.com</a>
+                        </li>
+                        <li class="flex items-center space-x-2">
+                            <i class="fa-solid fa-envelope text-tealBrand text-xs"></i>
+                            <a href="mailto:winston@bigbelizeltd.com" class="hover:text-white transition-colors">winston@bigbelizeltd.com</a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- Bottom Copyright -->
+            <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400 space-y-4 sm:space-y-0">
+                <p>&copy; <span id="year"></span> BIG Belize Ltd. All rights reserved.</p>
+                <div class="flex space-x-6">
+                    <a href="#" class="hover:text-tealBrand transition-colors">Privacy Policy</a>
+                    <a href="#" class="hover:text-tealBrand transition-colors">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Interactions -->
+    <script>
+        // Set current copyright year dynamically
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Mobile Menu Toggle Logic
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu on nav link click
+        mobileNavLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Interactive Contact Form Handling
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            
+            const formMessage = document.getElementById('form-message');
+            const firstName = document.getElementById('first-name').value;
+            
+            // Display simulated confirmation message
+            formMessage.className = 'mb-6 p-4 rounded-xl text-sm font-medium bg-teal-500/10 text-teal-700 border border-teal-500/30';
+            formMessage.innerHTML = `
+                <div class="flex items-center space-x-2">
+                    <i class="fa-solid fa-circle-check text-tealBrand text-lg"></i>
+                    <span>Thank you, <strong>${firstName}</strong>! Your message has been received. Our team will contact you shortly at <strong>info@bigbelizeltd.com</strong>.</span>
+                </div>
+            `;
+            formMessage.classList.remove('hidden');
+
+            // Reset Form Fields
+            document.getElementById('contact-form').reset();
+
+            // Scroll notification smoothly into view if needed
+            formMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+    </script>
+</body>
+</html>
