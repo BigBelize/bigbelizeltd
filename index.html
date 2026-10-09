@@ -1,375 +1,529 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Belgro Holdings Ltd. | Executive Management & Corporate Ventures</title>
-    <meta name="description" content="Belgro Holdings Ltd. is a premier corporate management and venture organization based in Belize.">
+    <title>Belgro Holdings Ltd. | Venture Capital & Operational Acceleration</title>
+    <meta name="description" content="Belgro Holdings Ltd. is a premier investment and corporate management holding firm based in Belize.">
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        navy: {
+                            900: '#0B132B',
+                            800: '#1C2541',
+                            700: '#3A506B',
+                        },
+                        emerald: {
+                            400: '#34D399',
+                            500: '#10B981',
+                            600: '#059669',
+                            700: '#047857',
+                        },
+                        cyan: {
+                            400: '#22D3EE',
+                            500: '#06B6D4',
+                        }
+                    },
+                    boxShadow: {
+                        'glow-emerald': '0 0 25px -5px rgba(16, 185, 129, 0.3)',
+                        'glow-cyan': '0 0 25px -5px rgba(6, 182, 212, 0.3)',
+                    }
+                }
+            }
+        }
+    </script>
     <style>
-        :root {
-            --primary: #0F172A;
-            --accent: #16A34A;
-            --accent-hover: #15803D;
-            --text-dark: #1E293B;
-            --text-muted: #64748B;
-            --bg-light: #F8FAFC;
-            --border-color: #E2E8F0;
+        .glass-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(226, 232, 240, 0.8);
         }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
+        .glass-card-dark {
+            background: rgba(28, 37, 65, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
-
-        body {
-            font-family: 'Inter', system-ui, -apple-system, sans-serif;
-            color: var(--text-dark);
-            background-color: #FFFFFF;
-            line-height: 1.6;
+        .gradient-text {
+            background: linear-gradient(135deg, #10B981 0%, #06B6D4 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
-
-        /* Header / Navbar */
-        header {
-            position: sticky;
-            top: 0;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(8px);
-            border-bottom: 1px solid var(--border-color);
-            z-index: 1000;
+        .gradient-bg {
+            background: linear-gradient(135deg, #0B132B 0%, #1C2541 60%, #0F2D3C 100%);
         }
-
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 1rem 1.5rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .brand-logo {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            text-decoration: none;
-            color: var(--primary);
-            font-weight: 700;
-            font-size: 1.25rem;
-        }
-
-        .logo-icon {
-            width: 38px;
-            height: 38px;
-            background: var(--primary);
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--accent);
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            list-style: none;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: var(--text-muted);
-            font-weight: 500;
-            transition: color 0.2s;
-        }
-
-        .nav-links a:hover {
-            color: var(--primary);
-        }
-
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
-            color: #FFFFFF;
-            padding: 6rem 1.5rem;
-            text-align: center;
-        }
-
-        .hero-content {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .hero-badge {
-            display: inline-block;
-            background: rgba(22, 163, 74, 0.15);
-            color: #4ADE80;
-            border: 1px solid rgba(74, 222, 128, 0.3);
-            padding: 0.35rem 1rem;
-            border-radius: 9999px;
-            font-size: 0.875rem;
-            font-weight: 500;
-            margin-bottom: 1.5rem;
-        }
-
-        .hero h1 {
-            font-size: 2.75rem;
-            font-weight: 700;
-            letter-spacing: -0.025em;
-            margin-bottom: 1.25rem;
-            line-height: 1.2;
-        }
-
-        .hero p {
-            font-size: 1.125rem;
-            color: #94A3B8;
-            margin-bottom: 2rem;
-        }
-
-        .btn-primary {
-            display: inline-block;
-            background: var(--accent);
-            color: #FFFFFF;
-            padding: 0.85rem 2rem;
-            border-radius: 6px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: background-color 0.2s;
-        }
-
-        .btn-primary:hover {
-            background: var(--accent-hover);
-        }
-
-        /* Sections */
-        section {
-            padding: 5rem 1.5rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 3.5rem;
-        }
-
-        .section-title h2 {
-            font-size: 2rem;
-            color: var(--primary);
-            margin-bottom: 0.5rem;
-        }
-
-        .section-title p {
-            color: var(--text-muted);
-        }
-
-        /* Services Grid */
-        .grid-3 {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .card {
-            background: var(--bg-light);
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            padding: 2rem;
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-
-        .card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
-        }
-
-        .card-icon {
-            width: 48px;
-            height: 48px;
-            background: rgba(22, 163, 74, 0.1);
-            border-radius: 6px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 1.25rem;
-            color: var(--accent);
-        }
-
-        .card h3 {
-            font-size: 1.25rem;
-            margin-bottom: 0.75rem;
-            color: var(--primary);
-        }
-
-        .card p {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-        }
-
-        /* Leadership Section */
-        .leadership-card {
-            background: #FFFFFF;
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            padding: 2rem;
-            text-align: center;
-        }
-
-        .avatar {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            background: var(--primary);
-            color: #FFFFFF;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin: 0 auto 1.25rem;
-        }
-
-        .leadership-card h3 {
-            font-size: 1.2rem;
-            color: var(--primary);
-        }
-
-        .leadership-card span {
-            display: block;
-            color: var(--accent);
-            font-size: 0.875rem;
-            font-weight: 600;
-            margin-bottom: 0.75rem;
-        }
-
-        /* Contact & Footer */
-        .contact-box {
-            background: var(--bg-light);
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            padding: 3rem 2rem;
-            text-align: center;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        footer {
-            border-top: 1px solid var(--border-color);
-            padding: 2rem 1.5rem;
-            text-align: center;
-            color: var(--text-muted);
-            font-size: 0.875rem;
-            background: var(--bg-light);
-        }
-
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 2rem; }
-            .nav-links { display: none; }
+        .hero-pattern {
+            background-image: radial-gradient(rgba(16, 185, 129, 0.15) 1px, transparent 1px);
+            background-size: 32px 32px;
         }
     </style>
 </head>
-<body>
+<body class="font-sans text-slate-800 bg-slate-50 antialiased selection:bg-emerald-500 selection:text-white">
 
     <!-- Header Navigation -->
-    <header>
-        <div class="nav-container">
-            <a href="#" class="brand-logo">
-                <div class="logo-icon">
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-                        <path d="M12 8v8M8 12h8"/>
+    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200/80 transition-all">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Brand Logo -->
+                <a href="#" class="flex items-center gap-3 group">
+                    <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-emerald-500 to-cyan-500 p-0.5 shadow-md group-hover:shadow-glow-emerald transition-all duration-300">
+                        <div class="w-full h-full bg-navy-900 rounded-[10px] flex items-center justify-center">
+                            <!-- Shield and Sprout Custom Logo SVG -->
+                            <svg class="w-6 h-6 text-emerald-400" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 22C12 22 20 18 20 12V5L12 2L4 5V12C4 18 12 22 12 22Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M12 17V11" stroke="#22D3EE" stroke-width="2" stroke-linecap="round"/>
+                                <path d="M12 11C12 11 10 9 7.5 9.5C5 10 5.5 13 8.5 13C11.5 13 12 11 12 11Z" fill="#10B981"/>
+                                <path d="M12 13C12 13 14 11 16.5 11.5C19 12 18.5 15 15.5 15C12.5 15 12 13 12 13Z" fill="#06B6D4"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="font-extrabold text-xl text-navy-900 tracking-tight leading-none group-hover:text-emerald-600 transition-colors">BELGRO</span>
+                        <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest leading-tight">Holdings Ltd.</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Nav Links -->
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="#about" class="text-sm font-medium text-slate-600 hover:text-emerald-600 transition-colors">About Us</a>
+                    <a href="#solutions" class="text-sm font-medium text-slate-600 hover:text-emerald-600 transition-colors">Solutions</a>
+                    <a href="#impact" class="text-sm font-medium text-slate-600 hover:text-emerald-600 transition-colors">Pillars</a>
+                    <a href="#leadership" class="text-sm font-medium text-slate-600 hover:text-emerald-600 transition-colors">Leadership</a>
+                    <a href="#contact" class="inline-flex items-center justify-center px-5 py-2.5 rounded-lg font-semibold text-sm text-white bg-gradient-to-r from-emerald-500 to-cyan-500 hover:from-emerald-600 hover:to-cyan-600 shadow-md hover:shadow-glow-emerald transition-all duration-200 active:scale-95">
+                        Get In Touch
+                    </a>
+                </nav>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg text-slate-600 hover:bg-slate-100 focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
                     </svg>
-                </div>
-                <span>Belgro Holdings</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-200 px-4 pt-2 pb-6 space-y-3">
+            <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-emerald-600 hover:bg-slate-50">About Us</a>
+            <a href="#solutions" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-emerald-600 hover:bg-slate-50">Solutions</a>
+            <a href="#impact" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-emerald-600 hover:bg-slate-50">Pillars</a>
+            <a href="#leadership" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-emerald-600 hover:bg-slate-50">Leadership</a>
+            <a href="#contact" class="block w-full text-center px-4 py-2.5 rounded-lg font-semibold text-white bg-gradient-to-r from-emerald-500 to-cyan-500">
+                Get In Touch
             </a>
-            <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#leadership">Leadership</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <div class="hero">
-        <div class="hero-content">
-            <span class="hero-badge">Registered Enterprise • Belize</span>
-            <h1>Strategic Management & Capital Enterprise</h1>
-            <p>Belgro Holdings Ltd. delivers strategic oversight, business process acceleration, and operations management across commercial sectors.</p>
-            <a href="#contact" class="btn-primary">Connect With Us</a>
-        </div>
-    </div>
+    <section class="relative gradient-bg hero-pattern text-white pt-20 pb-28 overflow-hidden">
+        <!-- Background Ambient Glow Effects -->
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-emerald-500/10 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute top-1/3 right-10 w-[400px] h-[400px] bg-cyan-500/10 rounded-full blur-3xl pointer-events-none"></div>
 
-    <!-- About / Overview -->
-    <section id="about">
-        <div class="section-title">
-            <h2>Corporate Overview</h2>
-            <p>Building sustainable business infrastructure and operational excellence.</p>
-        </div>
-        <div class="grid-3">
-            <div class="card">
-                <div class="card-icon">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-3xl mx-auto">
+                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs sm:text-sm font-semibold tracking-wide uppercase mb-8 backdrop-blur-md">
+                    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                    Regional Enterprise & Venture Capital Holding
                 </div>
-                <h3>Operational Excellence</h3>
-                <p>Deploying structured methodologies and high-performance workflows to drive long-term business performance.</p>
+                
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight mb-6">
+                    Accelerating Venture Growth & <span class="gradient-text">Operational Excellence</span>
+                </h1>
+                
+                <p class="text-lg sm:text-xl text-slate-300 font-normal leading-relaxed mb-10">
+                    Belgro Holdings Ltd. provides capital stewardship, strategic scaling frameworks, and business process outsourcing solutions to elevate enterprise value across global markets.
+                </p>
+
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                    <a href="#solutions" class="w-full sm:w-auto px-8 py-4 rounded-xl font-bold text-base text-white bg-gradient-to-r from-emerald-500 to-cyan-500 hover:from-emerald-600 hover:to-cyan-600 shadow-lg hover:shadow-glow-emerald transition-all duration-300">
+                        Explore Solutions
+                    </a>
+                    <a href="#contact" class="w-full sm:w-auto px-8 py-4 rounded-xl font-bold text-base text-white bg-slate-800/80 hover:bg-slate-800 border border-slate-700 hover:border-slate-600 transition-all duration-300">
+                        Partner With Us
+                    </a>
+                </div>
             </div>
-            <div class="card">
-                <div class="card-icon">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+
+            <!-- Stats Counter Strip -->
+            <div class="mt-20 grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+                <div class="glass-card-dark rounded-2xl p-6 text-center hover:border-emerald-500/50 transition-colors">
+                    <div class="text-3xl sm:text-4xl font-extrabold text-emerald-400 mb-1">Multi-Sector</div>
+                    <div class="text-xs uppercase tracking-wider text-slate-400 font-semibold">Strategic Investment</div>
                 </div>
-                <h3>Venture Management</h3>
-                <p>Identifying emerging market opportunities and developing commercial entities under unified leadership.</p>
-            </div>
-            <div class="card">
-                <div class="card-icon">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                <div class="glass-card-dark rounded-2xl p-6 text-center hover:border-cyan-500/50 transition-colors">
+                    <div class="text-3xl sm:text-4xl font-extrabold text-cyan-400 mb-1">Global Standard</div>
+                    <div class="text-xs uppercase tracking-wider text-slate-400 font-semibold">Operations & BPO Infrastructure</div>
                 </div>
-                <h3>BPO Acceleration</h3>
-                <p>Streamlining global support logistics, remote workforce operations, and client success frameworks.</p>
+                <div class="glass-card-dark rounded-2xl p-6 text-center hover:border-emerald-500/50 transition-colors">
+                    <div class="text-3xl sm:text-4xl font-extrabold text-emerald-400 mb-1">Central America</div>
+                    <div class="text-xs uppercase tracking-wider text-slate-400 font-semibold">Hub of Excellence (Belize)</div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Leadership Section -->
-    <section id="leadership" style="background-color: var(--bg-light); border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);">
-        <div class="section-title">
-            <h2>Executive Leadership</h2>
-            <p>Guiding vision, operational execution, and strategic expansion.</p>
+    <!-- About Section -->
+    <section id="about" class="py-24 bg-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div>
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-emerald-100 text-emerald-800 text-xs font-bold uppercase tracking-wider mb-4">
+                        Corporate Profile
+                    </div>
+                    <h2 class="text-3xl sm:text-4xl font-bold text-navy-900 tracking-tight leading-snug mb-6">
+                        Building Resilient Enterprises with Long-Term Strategic Vision
+                    </h2>
+                    <p class="text-slate-600 text-base sm:text-lg leading-relaxed mb-6">
+                        Belgro Holdings Ltd. operates as a dynamic investment and management firm based in Belize. We combine deep domain expertise, operational rigor, and regional connectivity to incubate, transform, and accelerate businesses across commercial sectors.
+                    </p>
+                    <p class="text-slate-600 text-base leading-relaxed mb-8">
+                        Whether expanding business process outsourcing (BPO) capacity, providing advisory services for capital efficiency, or engineering cross-border growth strategies, Belgro Holdings serves as a catalyst for sustainable enterprise growth.
+                    </p>
+
+                    <!-- Bullet Points -->
+                    <div class="space-y-4">
+                        <div class="flex items-start gap-3">
+                            <div class="p-1 rounded-full bg-emerald-500/10 text-emerald-600 mt-1">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-navy-900">Capital & Operational Stewardship</h4>
+                                <p class="text-sm text-slate-500">Aligning strategy with operational execution to deliver consistent stakeholder value.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <div class="p-1 rounded-full bg-cyan-500/10 text-cyan-600 mt-1">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-navy-900">BPO & Support Innovation</h4>
+                                <p class="text-sm text-slate-500">Deploying scalable workforce architectures and tech-enabled processes.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Graphic Card / Highlights -->
+                <div class="relative">
+                    <div class="absolute inset-0 bg-gradient-to-tr from-emerald-500 to-cyan-500 rounded-3xl transform rotate-1 scale-105 opacity-20 blur-xl"></div>
+                    <div class="relative bg-slate-900 text-white rounded-3xl p-8 sm:p-10 shadow-2xl border border-slate-800">
+                        <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-emerald-400 to-cyan-400 p-0.5 mb-6">
+                            <div class="w-full h-full bg-navy-900 rounded-[14px] flex items-center justify-center">
+                                <svg class="w-6 h-6 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5"/></svg>
+                            </div>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4">Belize Commercial Gateway</h3>
+                        <p class="text-slate-300 text-sm leading-relaxed mb-6">
+                            Positioned in Belize—a nearshore destination bridging North American and Latin American markets—Belgro Holdings leverages favorable business environments, fluent bilingual talent pools, and strong international connections.
+                        </p>
+                        <div class="border-t border-slate-800 pt-6 flex items-center justify-between text-xs text-slate-400">
+                            <span>Jurisdiction: Belize</span>
+                            <span class="text-emerald-400 font-semibold">Active Operating Entity</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-            <div class="leadership-card">
-                <div class="avatar">BF</div>
-                <h3>Brian Flowers</h3>
-                <span>Co-Founder & Director</span>
-                <p>Strategic Partnerships & Growth</p>
+    </section>
+
+    <!-- Solutions & Services Section -->
+    <section id="solutions" class="py-24 bg-slate-100/70 border-y border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-cyan-100 text-cyan-800 text-xs font-bold uppercase tracking-wider mb-4">
+                    Core Capabilities
+                </div>
+                <h2 class="text-3xl sm:text-4xl font-bold text-navy-900 tracking-tight">Strategic Solutions & Holdings</h2>
+                <p class="mt-4 text-slate-600 text-base sm:text-lg">Tailored operational oversight and investment management designed for sustained growth.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Card 1 -->
+                <div class="glass-card rounded-2xl p-8 hover:-translate-y-1 transition-all duration-300 hover:shadow-xl hover:border-emerald-500/40 group">
+                    <div class="w-14 h-14 rounded-xl bg-emerald-500/10 text-emerald-600 flex items-center justify-center mb-6 group-hover:bg-emerald-500 group-hover:text-white transition-colors duration-300">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-navy-900 mb-3 group-hover:text-emerald-600 transition-colors">Venture Investment</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">Identifying and capitalizing scalable ventures through equity involvement and governance.</p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="glass-card rounded-2xl p-8 hover:-translate-y-1 transition-all duration-300 hover:shadow-xl hover:border-cyan-500/40 group">
+                    <div class="w-14 h-14 rounded-xl bg-cyan-500/10 text-cyan-600 flex items-center justify-center mb-6 group-hover:bg-cyan-500 group-hover:text-white transition-colors duration-300">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-navy-900 mb-3 group-hover:text-cyan-600 transition-colors">BPO Acceleration</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">Designing, deploying, and managing nearshore customer support and operational delivery centers.</p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="glass-card rounded-2xl p-8 hover:-translate-y-1 transition-all duration-300 hover:shadow-xl hover:border-emerald-500/40 group">
+                    <div class="w-14 h-14 rounded-xl bg-emerald-500/10 text-emerald-600 flex items-center justify-center mb-6 group-hover:bg-emerald-500 group-hover:text-white transition-colors duration-300">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-navy-900 mb-3 group-hover:text-emerald-600 transition-colors">Business Strategy</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">Streamlining corporate workflows, performance tracking, and resource allocation for growth.</p>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="glass-card rounded-2xl p-8 hover:-translate-y-1 transition-all duration-300 hover:shadow-xl hover:border-cyan-500/40 group">
+                    <div class="w-14 h-14 rounded-xl bg-cyan-500/10 text-cyan-600 flex items-center justify-center mb-6 group-hover:bg-cyan-500 group-hover:text-white transition-colors duration-300">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-navy-900 mb-3 group-hover:text-cyan-600 transition-colors">Commercial Advisory</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">Providing high-level counsel on cross-border business structuring and partnership negotiations.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact & Strategic Values Feature Banner -->
+    <section id="impact" class="py-20 gradient-bg text-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <h2 class="text-3xl font-bold">Our Core Pillars</h2>
+                <p class="text-slate-300 mt-2 text-sm sm:text-base">The foundational principles guiding every partnership and subsidiary entity.</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="glass-card-dark rounded-xl p-6 border-l-4 border-l-emerald-500">
+                    <h4 class="text-lg font-bold text-white mb-2">Integrity & Governance</h4>
+                    <p class="text-xs text-slate-300 leading-relaxed">Uncompromising transparency and compliance in all commercial engagements.</p>
+                </div>
+                <div class="glass-card-dark rounded-xl p-6 border-l-4 border-l-cyan-500">
+                    <h4 class="text-lg font-bold text-white mb-2">Scalable Infrastructure</h4>
+                    <p class="text-xs text-slate-300 leading-relaxed">Building systems designed for rapid operational expansion and flexibility.</p>
+                </div>
+                <div class="glass-card-dark rounded-xl p-6 border-l-4 border-l-emerald-500">
+                    <h4 class="text-lg font-bold text-white mb-2">Nearshore Advantage</h4>
+                    <p class="text-xs text-slate-300 leading-relaxed">Maximizing geographical and temporal alignment for North American clientele.</p>
+                </div>
+                <div class="glass-card-dark rounded-xl p-6 border-l-4 border-l-cyan-500">
+                    <h4 class="text-lg font-bold text-white mb-2">Innovation & Tech</h4>
+                    <p class="text-xs text-slate-300 leading-relaxed">Integrating modern digital workflows to eliminate operational friction.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Executive Leadership Section -->
+    <section id="leadership" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-emerald-100 text-emerald-800 text-xs font-bold uppercase tracking-wider mb-4">
+                    Management
+                </div>
+                <h2 class="text-3xl sm:text-4xl font-bold text-navy-900 tracking-tight">Executive Leadership</h2>
+                <p class="mt-4 text-slate-600 text-base sm:text-lg">Spearheading vision, commercial execution, and strategic alliances.</p>
+            </div>
+
+            <!-- Managing Director Feature Card -->
+            <div class="max-w-4xl mx-auto bg-slate-50 border border-slate-200 rounded-3xl p-8 sm:p-12 shadow-sm hover:shadow-md transition-shadow mb-12">
+                <div class="flex flex-col md:flex-row items-center md:items-start gap-8">
+                    <!-- Avatar / Badge -->
+                    <div class="flex-shrink-0">
+                        <div class="w-28 h-28 sm:w-32 sm:h-32 rounded-2xl bg-gradient-to-br from-navy-900 to-navy-800 p-1 shadow-lg">
+                            <div class="w-full h-full bg-navy-900 rounded-[14px] flex flex-col items-center justify-center text-white">
+                                <span class="text-3xl font-extrabold text-emerald-400">BF</span>
+                                <span class="text-[10px] font-semibold text-slate-400 mt-1 uppercase">Belgro</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Details -->
+                    <div class="text-center md:text-left flex-grow">
+                        <div class="inline-block px-3 py-1 rounded-md bg-emerald-500/10 text-emerald-700 font-bold text-xs uppercase tracking-wider mb-2">
+                            Co-Founder & Managing Director
+                        </div>
+                        <h3 class="text-2xl sm:text-3xl font-bold text-navy-900">Brian Flowers</h3>
+                        <p class="text-emerald-600 text-sm font-semibold mb-4">Executive Operations & Venture Strategy</p>
+                        
+                        <p class="text-slate-600 text-sm sm:text-base leading-relaxed mb-6">
+                            Brian Flowers oversees the strategic direction, international partnerships, and operational execution of Belgro Holdings Ltd. Under his leadership, the firm continues to establish robust service frameworks and investment channels that foster sustainable growth across Belize and regional markets.
+                        </p>
+
+                        <div class="flex flex-wrap items-center justify-center md:justify-start gap-4 border-t border-slate-200 pt-6">
+                            <a href="mailto:Winston@belgroholdings.com" class="inline-flex items-center gap-2 text-xs font-bold text-navy-900 hover:text-emerald-600 transition-colors">
+                                <svg class="w-4 h-4 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                                Executive Office Outreach
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Division Pillars Sub-grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+                <div class="bg-white p-6 rounded-2xl border border-slate-200 text-center">
+                    <div class="text-emerald-500 font-bold text-sm mb-1">Strategic Advisory</div>
+                    <div class="text-slate-500 text-xs">Corporate Governance & Capital Planning</div>
+                </div>
+                <div class="bg-white p-6 rounded-2xl border border-slate-200 text-center">
+                    <div class="text-cyan-500 font-bold text-sm mb-1">Operations & BPO</div>
+                    <div class="text-slate-500 text-xs">Workforce Scaling & Infrastructure</div>
+                </div>
+                <div class="bg-white p-6 rounded-2xl border border-slate-200 text-center">
+                    <div class="text-emerald-500 font-bold text-sm mb-1">Commercial Growth</div>
+                    <div class="text-slate-500 text-xs">Partnerships & Market Expansion</div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact">
-        <div class="section-title">
-            <h2>Get In Touch</h2>
-            <p>Direct inquiries regarding corporate operations and partnership opportunities.</p>
-        </div>
-        <div class="contact-box">
-            <h3 style="margin-bottom: 0.5rem; color: var(--primary);">Belgro Holdings Ltd.</h3>
-            <p style="margin-bottom: 1.5rem; color: var(--text-muted);">Belize City, Belize • </p>
-            <p style="margin-bottom: 2rem;">
-                <strong>Official Email:</strong><br>
-                <a href="mailto:info@belgroholdings.com" style="color: var(--accent); font-weight: 600; text-decoration: none;">info@belgroholdings.com</a>
-            </p>
-            <a href="mailto:info@belgroholdings.com" class="btn-primary">Send Email Inquiry</a>
+    <section id="contact" class="py-24 bg-slate-100/70 border-t border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                <!-- Left Details -->
+                <div class="lg:col-span-5">
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-emerald-100 text-emerald-800 text-xs font-bold uppercase tracking-wider mb-4">
+                        Contact Us
+                    </div>
+                    <h2 class="text-3xl sm:text-4xl font-bold text-navy-900 tracking-tight mb-6">Let's Discuss Your Next Strategic Venture</h2>
+                    <p class="text-slate-600 text-base leading-relaxed mb-8">
+                        Connect with the executive office at Belgro Holdings Ltd. for investment opportunities, BPO partnership inquiries, or strategic advisory.
+                    </p>
+
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-600 flex items-center justify-center shrink-0">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                            </div>
+                            <div>
+                                <h4 class="text-sm font-bold text-navy-900">Headquarters</h4>
+                                <p class="text-sm text-slate-500">Belize City, Belize</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-cyan-500/10 text-cyan-600 flex items-center justify-center shrink-0">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                            </div>
+                            <div>
+                                <h4 class="text-sm font-bold text-navy-900">Official Contact Email</h4>
+                                <a href="mailto:Winston@belgroholdings.com" class="text-sm text-emerald-600 hover:text-emerald-700 font-semibold transition-colors">Winston@belgroholdings.com</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Form -->
+                <div class="lg:col-span-7">
+                    <div class="bg-white rounded-3xl p-8 sm:p-10 shadow-lg border border-slate-200">
+                        <h3 class="text-2xl font-bold text-navy-900 mb-6">Send an Inquiry</h3>
+                        
+                        <!-- Interactive Form -->
+                        <form id="contact-form" class="space-y-6" onsubmit="handleFormSubmit(event)">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                                <div>
+                                    <label class="block text-xs font-bold text-slate-700 uppercase mb-2">Your Name</label>
+                                    <input type="text" required placeholder="John Doe" class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 focus:bg-white focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/20 outline-none transition-all text-sm">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-bold text-slate-700 uppercase mb-2">Email Address</label>
+                                    <input type="email" required placeholder="john@company.com" class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 focus:bg-white focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/20 outline-none transition-all text-sm">
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 uppercase mb-2">Subject / Topic</label>
+                                <select class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 focus:bg-white focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/20 outline-none transition-all text-sm text-slate-700">
+                                    <option>Venture Partnership Inquiry</option>
+                                    <option>BPO & Operational Services</option>
+                                    <option>Strategic Advisory</option>
+                                    <option>General Corporate Inquiry</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 uppercase mb-2">Message</label>
+                                <textarea rows="4" required placeholder="Briefly describe your proposal or inquiry..." class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 focus:bg-white focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/20 outline-none transition-all text-sm"></textarea>
+                            </div>
+
+                            <button type="submit" class="w-full py-4 rounded-xl font-bold text-sm text-white bg-gradient-to-r from-emerald-500 to-cyan-500 hover:from-emerald-600 hover:to-cyan-600 shadow-md hover:shadow-glow-emerald transition-all duration-300">
+                                Transmit Message
+                            </button>
+                        </form>
+
+                        <!-- Success Message Box -->
+                        <div id="form-success" class="hidden mt-6 p-4 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-800 text-sm text-center">
+                            Thank you! Your inquiry has been prepared. Opening your default mail app...
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer>
-        <p>&copy; 2026 Belgro Holdings Ltd. All rights reserved. | belgroholdings.com</p>
+    <footer class="bg-navy-900 text-slate-400 py-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+                <!-- Brand -->
+                <div class="flex items-center gap-3">
+                    <div class="w-8 h-8 rounded-lg bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center">
+                        <svg class="w-4 h-4 text-emerald-400" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 22C12 22 20 18 20 12V5L12 2L4 5V12C4 18 12 22 12 22Z" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <span class="text-white font-bold text-sm tracking-wide">Belgro Holdings Ltd.</span>
+                </div>
+
+                <!-- Copyright -->
+                <div class="text-xs text-slate-500">
+                    &copy; 2026 Belgro Holdings Ltd. All rights reserved. | belgroholdings.com
+                </div>
+
+                <!-- Links -->
+                <div class="flex items-center gap-6 text-xs">
+                    <a href="#about" class="hover:text-emerald-400 transition-colors">About</a>
+                    <a href="#solutions" class="hover:text-emerald-400 transition-colors">Solutions</a>
+                    <a href="#leadership" class="hover:text-emerald-400 transition-colors">Leadership</a>
+                    <a href="#contact" class="hover:text-emerald-400 transition-colors">Contact</a>
+                </div>
+            </div>
+        </div>
     </footer>
 
+    <script>
+        // Mobile Navigation Toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Close menu on link click
+        menu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+
+        // Interactive Form Handler
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            const successBox = document.getElementById('form-success');
+            const form = document.getElementById('contact-form');
+            
+            successBox.classList.remove('hidden');
+            
+            setTimeout(() => {
+                window.location.href = "mailto:Winston@belgroholdings.com?subject=Website%20Inquiry";
+            }, 1000);
+        }
+    </script>
 </body>
 </html>
