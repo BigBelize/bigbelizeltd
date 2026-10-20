@@ -90,10 +90,10 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-20">
                 
-                <!-- Brand Logo (Attempts Loading Logo.jpg or renders SVG Emblem) -->
+                <!-- Brand Logo Badge with High Contrast -->
                 <a href="#" class="flex items-center gap-3 group">
-                    <div class="h-12 w-auto flex items-center justify-center overflow-hidden py-1">
-                        <img id="header-logo-img" src="Logo.jpg" alt="Belgro Holdings Logo" class="h-full object-contain max-h-12" onerror="handleLogoError(this)">
+                    <div class="h-14 px-3 py-1.5 rounded-xl bg-slate-900/80 border border-slate-700/60 flex items-center justify-center overflow-hidden shadow-sm group-hover:border-slate-500 transition-all">
+                        <img id="header-logo-img" src="Logo.jpg" alt="Belgro Holdings Logo" class="h-full object-contain max-h-11 filter brightness-125 contrast-125 drop-shadow-[0_0_8px_rgba(255,255,255,0.2)]" onerror="handleLogoError(this)">
                     </div>
                 </a>
 
@@ -523,8 +523,8 @@
             <div class="flex flex-col md:flex-row items-center justify-between gap-6">
                 
                 <div class="flex items-center gap-3">
-                    <div class="h-10 w-auto flex items-center justify-center overflow-hidden py-1">
-                        <img src="Logo.jpg" alt="Belgro Holdings Logo" class="h-full object-contain max-h-10" onerror="handleLogoError(this)">
+                    <div class="h-12 px-3 py-1 rounded-xl bg-slate-900/80 border border-slate-700/60 flex items-center justify-center overflow-hidden">
+                        <img src="Logo.jpg" alt="Belgro Holdings Logo" class="h-full object-contain max-h-9 filter brightness-125 contrast-125" onerror="handleLogoError(this)">
                     </div>
                 </div>
 
@@ -589,33 +589,33 @@
             }
         }
 
-        // Inline SVG Fallback generator matching exact Belgro Shield Emblem
+        // High-contrast Inline SVG Fallback
         function handleLogoError(imgElement) {
             const svgMarkup = `
                 <div class="flex items-center gap-3">
-                    <svg class="w-10 h-10 text-cyan-400 shrink-0" viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg class="w-9 h-9 text-cyan-400 shrink-0 filter drop-shadow-[0_0_6px_rgba(34,211,238,0.4)]" viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <defs>
                             <linearGradient id="shieldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                                <stop offset="0%" stop-color="#3A82A6" />
+                                <stop offset="0%" stop-color="#38BDF8" />
                                 <stop offset="50%" stop-color="#1D5C80" />
                                 <stop offset="100%" stop-color="#0B132B" />
                             </linearGradient>
                             <linearGradient id="silverGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                                <stop offset="0%" stop-color="#E2E8F0" />
-                                <stop offset="100%" stop-color="#94A3B8" />
+                                <stop offset="0%" stop-color="#FFFFFF" />
+                                <stop offset="100%" stop-color="#CBD5E1" />
                             </linearGradient>
                         </defs>
-                        <path d="M 120 70 L 380 70 L 380 180 C 380 300 250 420 250 420 C 250 420 120 300 120 180 Z" fill="url(#silverGrad)" opacity="0.25"/>
+                        <path d="M 120 70 L 380 70 L 380 180 C 380 300 250 420 250 420 C 250 420 120 300 120 180 Z" fill="url(#silverGrad)" opacity="0.3"/>
                         <path d="M 140 90 L 250 90 C 250 90 250 250 140 280 Z" fill="url(#shieldGrad)" />
                         <path d="M 150 280 L 250 180 L 210 180 L 210 240 L 170 280 Z" fill="url(#silverGrad)" />
-                        <path d="M 230 130 L 310 50 L 300 120 L 260 120 Z" fill="#3A82A6" />
+                        <path d="M 230 130 L 310 50 L 300 120 L 260 120 Z" fill="#38BDF8" />
                         <path d="M 270 230 C 320 200 370 210 380 180 C 350 240 300 270 270 280 C 250 290 260 330 230 360 C 290 350 360 300 380 240 C 390 300 300 400 250 410 Z" fill="url(#shieldGrad)" />
                         <path d="M 330 120 C 310 150 330 190 360 180 C 370 140 340 120 330 120 Z" fill="#38BDF8" />
                         <path d="M 300 170 C 280 190 300 220 320 210 C 330 180 310 170 300 170 Z" fill="#34D399" />
                     </svg>
                     <div class="flex flex-col text-left">
-                        <span class="font-black text-xl text-white tracking-widest leading-none">BELGRO</span>
-                        <span class="text-[9px] font-bold text-cyan-400 uppercase tracking-[0.25em] leading-tight">HOLDINGS</span>
+                        <span class="font-black text-lg text-white tracking-widest leading-none">BELGRO</span>
+                        <span class="text-[9px] font-bold text-cyan-400 uppercase tracking-[0.22em] leading-tight mt-0.5">HOLDINGS</span>
                     </div>
                 </div>
             `;
