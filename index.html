@@ -1,93 +1,167 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>For Legacy Ltd. | Management Consultancy & Strategic Operations</title>
+    <title>For Legacy Ltd. | Regional Investment & Venture Holding</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        .gold-accent { color: #D4AF37; }
-        .gold-bg { background-color: #D4AF37; }
-        .gold-border { border-color: #D4AF37; }
-    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: {
+                            DEFAULT: '#D4AF37',
+                            light: '#E6CA65',
+                            dark: '#AA8822',
+                        },
+                        charcoal: {
+                            DEFAULT: '#1A1A1A',
+                            light: '#2A2A2A',
+                            dark: '#0F0F0F',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
 </head>
-<body class="bg-gray-900 text-gray-100 font-sans antialiased">
+<body class="bg-charcoal text-gray-100 font-sans antialiased selection:bg-gold selection:text-black">
 
-    <!-- Header / Nav -->
-    <header class="border-b border-gray-800 bg-black/50 sticky top-0 z-50 backdrop-blur">
-        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-            <div class="flex items-center space-x-3">
+    <!-- Navigation -->
+    <header class="border-b border-gray-800 bg-black/60 sticky top-0 z-50 backdrop-blur-md">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="flex items-center space-x-3">
                 <img src="https://i.imgur.com/NcylSBN.png" alt="For Legacy Ltd. Logo" class="h-10 w-auto">
-                <span class="font-bold tracking-wider text-lg uppercase">For Legacy Ltd.</span>
-            </div>
+                <span class="font-bold tracking-wider text-lg uppercase text-white">For Legacy Ltd.</span>
+            </a>
+            <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-gray-300">
+                <a href="#about" class="hover:text-gold transition">About Us</a>
+                <a href="#solutions" class="hover:text-gold transition">Solutions</a>
+                <a href="#pillars" class="hover:text-gold transition">Pillars</a>
+                <a href="#leadership" class="hover:text-gold transition">Leadership</a>
+                <a href="#faq" class="hover:text-gold transition">FAQ</a>
+            </nav>
             <div>
-                <a href="mailto:brian@forlegacyltd.com" class="text-sm px-4 py-2 rounded gold-bg text-black font-semibold hover:opacity-90 transition">Inquiries</a>
+                <a href="mailto:brian@forlegacyltd.com" class="text-sm px-5 py-2.5 rounded-md bg-gold text-black font-semibold hover:bg-gold-light transition">Get In Touch</a>
             </div>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section class="max-w-6xl mx-auto px-6 py-20 md:py-28 text-center">
-        <div class="inline-block mb-4 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest bg-gray-800 gold-accent border gold-border">
-            Reg. No. 000060113
+    <section class="max-w-7xl mx-auto px-6 py-24 md:py-32 text-center relative overflow-hidden">
+        <div class="inline-flex items-center space-x-2 mb-6 px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-widest bg-charcoal-light border border-gold/40 text-gold">
+            <span class="w-2 h-2 rounded-full bg-gold animate-pulse"></span>
+            <span>Regional Investment & Venture Holding</span>
         </div>
-        <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight mb-6">
-            Strategic Operations & <br><span class="gold-accent">Management Consultancy</span>
+        
+        <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tight mb-8 text-white leading-tight">
+            Accelerating Venture Growth & <br class="hidden md:inline"><span class="text-gold">Operational Excellence</span>
         </h1>
-        <p class="max-w-2xl mx-auto text-gray-400 text-lg md:text-xl mb-10 leading-relaxed">
-            Driving nearshore efficiency, digital workflow design, and cross-functional operational excellence from Belize.
+        
+        <p class="max-w-3xl mx-auto text-gray-400 text-lg md:text-xl mb-12 leading-relaxed">
+            For Legacy Ltd. provides capital stewardship, strategic scaling frameworks, and business process outsourcing infrastructure to elevate enterprise value across regional markets.
         </p>
-        <div class="flex justify-center gap-4">
-            <a href="mailto:brian@forlegacyltd.com" class="px-8 py-3 rounded font-medium gold-bg text-black hover:opacity-90 transition">Connect With Us</a>
+        
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+            <a href="#solutions" class="px-8 py-3.5 rounded-md font-semibold bg-gold text-black hover:bg-gold-light transition shadow-lg shadow-gold/10">Explore Solutions</a>
+            <a href="mailto:brian@forlegacyltd.com" class="px-8 py-3.5 rounded-md font-semibold bg-charcoal-light border border-gray-700 text-white hover:border-gold transition">Partner With Us</a>
         </div>
     </section>
 
-    <!-- Corporate Overview / About -->
-    <section class="border-t border-gray-800 bg-black/30 py-20">
-        <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+    <!-- About Us Section -->
+    <section id="about" class="border-t border-gray-800 bg-charcoal-dark py-24">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div>
-                <h2 class="text-2xl md:text-3xl font-bold mb-6">Institutional Excellence & Precision Management</h2>
-                <p class="text-gray-400 mb-4 leading-relaxed">
-                    For Legacy Ltd. is a premier management consultancy specializing in scalable digital architectures, process optimization, and corporate governance.
+                <h2 class="text-3xl md:text-4xl font-bold mb-6 text-white">Strategic Holding & Corporate Governance</h2>
+                <p class="text-gray-400 mb-6 leading-relaxed">
+                    For Legacy Ltd. serves as the central management and investment umbrella for high-growth ventures across Central America and nearshore markets.
                 </p>
-                <p class="text-gray-400 leading-relaxed">
-                    Operating out of the Belize District, we bridge strategic vision with meticulous execution to support sustainable enterprise growth.
+                <p class="text-gray-400 leading-relaxed mb-6">
+                    We combine institutional corporate administration with specialized operational capabilities in BPO workflow design, customer support scaling, and legal/tax optimization.
                 </p>
             </div>
-            <div class="border gold-border p-8 rounded-lg bg-gray-900/50">
-                <h3 class="text-lg font-semibold mb-4 gold-accent">Corporate Details</h3>
-                <ul class="space-y-3 text-sm text-gray-300">
-                    <li><strong class="text-white">Entity:</strong> For Legacy Ltd.</li>
-                    <li><strong class="text-white">Registration:</strong> No. 000060113</li>
-                    <li><strong class="text-white">Headquarters:</strong> 310 Lords Bank Rd, Belize District, Belize</li>
-                    <li><strong class="text-white">Primary Focus:</strong> Management Consultancy & Strategic Operations</li>
+            <div class="border border-gold/30 p-8 rounded-xl bg-charcoal p-8 shadow-xl">
+                <h3 class="text-xl font-bold mb-6 text-gold">Corporate Overview</h3>
+                <ul class="space-y-4 text-sm text-gray-300">
+                    <li class="flex justify-between border-b border-gray-800 pb-2">
+                        <span class="text-gray-500">Legal Name</span>
+                        <span class="font-medium text-white">For Legacy Ltd.</span>
+                    </li>
+                    <li class="flex justify-between border-b border-gray-800 pb-2">
+                        <span class="text-gray-500">Registration No.</span>
+                        <span class="font-medium text-white">000060113</span>
+                    </li>
+                    <li class="flex justify-between border-b border-gray-800 pb-2">
+                        <span class="text-gray-500">Registered Address</span>
+                        <span class="font-medium text-white">310 Lords Bank Rd, Belize District</span>
+                    </li>
+                    <li class="flex justify-between pb-1">
+                        <span class="text-gray-500">Primary Domain</span>
+                        <span class="font-medium text-gold">forlegacyltd.com</span>
+                    </li>
                 </ul>
             </div>
         </div>
     </section>
 
-    <!-- Executive Leadership -->
-    <section class="py-20 max-w-6xl mx-auto px-6">
+    <!-- Solutions Section -->
+    <section id="solutions" class="py-24 max-w-7xl mx-auto px-6">
         <div class="text-center mb-16">
-            <h2 class="text-3xl font-bold mb-3">Executive Leadership</h2>
-            <p class="text-gray-400">Guiding governance and institutional oversight.</p>
+            <h2 class="text-3xl md:text-4xl font-bold mb-4 text-white">Our Solutions</h2>
+            <p class="text-gray-400 max-w-2xl mx-auto">Scalable operational structures designed to accelerate performance and market presence.</p>
         </div>
-        <div class="max-w-sm mx-auto bg-black/40 border border-gray-800 rounded-lg p-6 text-center">
-            <div class="w-20 h-20 mx-auto rounded-full gold-bg flex items-center justify-center text-black font-bold text-2xl mb-4">
-                BF
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="bg-charcoal-light p-8 rounded-xl border border-gray-800 hover:border-gold/50 transition">
+                <div class="w-12 h-12 rounded-lg bg-gold/10 text-gold flex items-center justify-center font-bold text-xl mb-6">01</div>
+                <h3 class="text-xl font-bold mb-3 text-white">Nearshore Operations</h3>
+                <p class="text-gray-400 text-sm leading-relaxed">Designing, staffing, and managing high-capacity BPO programs tailored for cross-functional efficiency and LATAM market alignment.</p>
             </div>
-            <h3 class="text-xl font-bold mb-1">Brian Flowers Sr.</h3>
-            <p class="text-xs uppercase tracking-wider gold-accent mb-4">Chairman</p>
-            <p class="text-gray-400 text-sm mb-6">Providing executive governance, strategic direction, and corporate oversight.</p>
-            <a href="mailto:brian@forlegacyltd.com" class="text-sm gold-accent hover:underline">brian@forlegacyltd.com</a>
+            <div class="bg-charcoal-light p-8 rounded-xl border border-gray-800 hover:border-gold/50 transition">
+                <div class="w-12 h-12 rounded-lg bg-gold/10 text-gold flex items-center justify-center font-bold text-xl mb-6">02</div>
+                <h3 class="text-xl font-bold mb-3 text-white">Workflow Design</h3>
+                <p class="text-gray-400 text-sm leading-relaxed">Integrating AI efficiency tools, modern dynamic CRM systems, and structured SOPs to minimize friction and maximize throughput.</p>
+            </div>
+            <div class="bg-charcoal-light p-8 rounded-xl border border-gray-800 hover:border-gold/50 transition">
+                <div class="w-12 h-12 rounded-lg bg-gold/10 text-gold flex items-center justify-center font-bold text-xl mb-6">03</div>
+                <h3 class="text-xl font-bold mb-3 text-white">Venture Growth</h3>
+                <p class="text-gray-400 text-sm leading-relaxed">Providing foundational capital stewardship, corporate administrative support, and legal setup for emerging enterprise ventures.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Leadership Section (Brian Flowers Sr. featured) -->
+    <section id="leadership" class="border-t border-gray-800 bg-charcoal-dark py-24">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-white">Executive Leadership</h2>
+                <p class="text-gray-400">Institutional governance and corporate oversight.</p>
+            </div>
+            <div class="max-w-md mx-auto bg-charcoal border border-gray-800 rounded-2xl p-8 text-center shadow-xl hover:border-gold/40 transition">
+                <div class="w-24 h-24 mx-auto rounded-full bg-gold/20 border-2 border-gold flex items-center justify-center text-gold font-bold text-3xl mb-6">
+                    BF
+                </div>
+                <h3 class="text-2xl font-bold mb-1 text-white">Brian Flowers Sr.</h3>
+                <p class="text-xs uppercase tracking-widest text-gold font-semibold mb-4">Chairman</p>
+                <p class="text-gray-400 text-sm leading-relaxed mb-6">
+                    Overseeing corporate governance, financial stewardship, and institutional strategy for For Legacy Ltd.
+                </p>
+                <a href="mailto:brian@forlegacyltd.com" class="inline-flex items-center text-sm text-gold hover:underline font-medium">
+                    <span>brian@forlegacyltd.com</span>
+                    <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                </a>
+            </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="border-t border-gray-800 py-8 bg-black">
-        <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500">
-            <p>&copy; 2026 For Legacy Ltd. All rights reserved. Reg. No. 000060113.</p>
-            <p class="mt-4 md:mt-0">310 Lords Bank Rd, Belize District, Belize</p>
+    <footer class="border-t border-gray-800 py-12 bg-black">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500">
+            <div class="flex items-center space-x-3 mb-4 md:mb-0">
+                <img src="https://i.imgur.com/NcylSBN.png" alt="For Legacy Ltd. Logo" class="h-6 w-auto">
+                <span>&copy; 2026 For Legacy Ltd. All rights reserved. Reg. No. 000060113.</span>
+            </div>
+            <p>310 Lords Bank Rd, Belize District, Belize</p>
         </div>
     </footer>
 
