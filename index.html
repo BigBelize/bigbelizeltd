@@ -20,12 +20,12 @@
                     colors: {
                         gold: {
                             400: '#E5C158',
-                            500: '#D4AF37', // Brand Primary Gold
+                            500: '#D4AF37', // Primary Brand Gold
                             600: '#B89320',
                         },
                         charcoal: {
                             800: '#222222',
-                            900: '#1A1A1A', // Brand Primary Dark
+                            900: '#1A1A1A', // Primary Brand Charcoal
                             950: '#121212',
                         }
                     },
@@ -38,24 +38,22 @@
         }
     </script>
     <style>
-        /* Custom Styles & Glassmorphism Effects */
-        .glass-card {
-            background: rgba(26, 26, 26, 0.75);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(212, 175, 55, 0.2);
-        }
-        .glass-card-light {
-            background: rgba(255, 255, 255, 0.9);
-            backdrop-filter: blur(8px);
-            border: 1px solid rgba(212, 175, 55, 0.15);
-        }
+        /* Glassmorphism & Gold Effects */
         .gold-gradient-text {
             background: linear-gradient(135deg, #F3E5AB 0%, #D4AF37 50%, #AA7C11 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
         .gold-border-glow:hover {
-            box-shadow: 0 0 20px rgba(212, 175, 55, 0.25);
+            box-shadow: 0 0 25px rgba(212, 175, 55, 0.25);
+        }
+        /* Custom Faded Watermark Effect */
+        .watermark-bg {
+            background-image: url('https://i.imgur.com/S5Amdci.png');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: min(450px, 70vw);
+            opacity: 0.06;
         }
     </style>
 </head>
@@ -66,11 +64,14 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-20">
                 
-<!-- Updated Header Logo -->
-<a href="#" class="logo-container">
-  <img src="https://i.imgur.com/S5Amdci.png" alt="For Legacy Ltd. Logo" style="height: 48px; width: auto; object-fit: contain;">
-  <span class="logo-text">FOR LEGACY LTD.</span>
-</a>
+                <!-- Corporate Logo Image from GitHub -->
+                <a href="#home" class="flex items-center gap-3 group focus:outline-none">
+                    <img src="https://raw.githubusercontent.com/BigBelize/bigbelizeltd/main/Letter%20Head.png" alt="For Legacy Ltd. Logo" class="h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-105" onerror="this.onerror=null; this.src='https://placehold.co/200x80/1A1A1A/D4AF37?text=For+Legacy+Ltd';">
+                    <div class="flex flex-col">
+                        <span class="text-xl font-bold tracking-widest text-white group-hover:text-gold-500 transition-colors">FOR LEGACY LTD.</span>
+                        <span class="text-[10px] tracking-widest text-gold-400 font-medium uppercase">Nearshore BPO & Consultancy</span>
+                    </div>
+                </a>
 
                 <!-- Desktop Navigation Links -->
                 <nav class="hidden md:flex items-center space-x-8">
@@ -98,19 +99,22 @@
             <a href="#leadership" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-slate-200 hover:text-gold-500 hover:bg-charcoal-900">Leadership</a>
             <a href="#contact" class="mobile-nav-link block text-center px-4 py-3 rounded-md text-base font-semibold bg-gold-500 text-charcoal-900 hover:bg-gold-400">Contact Us</a>
         </div>
-    </header>
-
     <!-- HERO SECTION -->
     <section id="home" class="relative pt-32 pb-24 md:pt-44 md:pb-36 bg-charcoal-950 text-white overflow-hidden">
         <!-- Subtle Pattern Background Overlay -->
         <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#D4AF37_1px,transparent_1px)] [background-size:24px_24px]"></div>
         
+        <!-- Watermark Logo Background Graphic -->
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] sm:w-[650px] opacity-10 pointer-events-none select-none filter brightness-200 contrast-125">
+            <img src="https://raw.githubusercontent.com/BigBelize/bigbelizeltd/main/Letter%20Head.png" alt="Watermark Background" class="w-full h-auto object-contain mx-auto">
+        </div>
+
         <!-- Subtle Radial Light Glow -->
         <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gold-500/10 rounded-full blur-3xl pointer-events-none"></div>
 
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
             <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gold-500/10 border border-gold-500/30 text-gold-400 text-xs sm:text-sm font-semibold tracking-wide uppercase mb-8">
-                <span class="w-2 h-2 rounded-full bg-gold-500 animate-pulse"></span>
+                <span class="w-2.5 h-2.5 rounded-full bg-gold-500 animate-pulse"></span>
                 Belize Nearshore Advantage
             </div>
 
@@ -119,15 +123,15 @@
             </h1>
 
             <p class="mt-6 text-lg sm:text-xl text-slate-300 max-w-2xl mx-auto font-light leading-relaxed">
-                Scalable customer support, workforce optimization, and executive enterprise consultation tailored for modern business growth.
+                Scalable contact center solutions, workforce optimization, and executive enterprise consultation tailored for modern business growth.
             </p>
 
             <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center items-center">
                 <a href="#services" class="w-full sm:w-auto px-8 py-4 rounded-full font-semibold text-charcoal-900 bg-gold-500 hover:bg-gold-400 transition-all shadow-lg shadow-gold-500/20 text-center">
-                    Our Services <i class="fa-solid fa-arrow-right ml-2 text-xs"></i>
+                    Explore Our Services <i class="fa-solid fa-arrow-right ml-2 text-xs"></i>
                 </a>
                 <a href="#contact" class="w-full sm:w-auto px-8 py-4 rounded-full font-semibold text-slate-200 bg-charcoal-900 hover:bg-charcoal-800 border border-gold-500/30 hover:border-gold-500 transition-all text-center">
-                    Get in Touch
+                    Schedule Consultation
                 </a>
             </div>
 
@@ -135,19 +139,19 @@
             <div class="mt-16 sm:mt-24 grid grid-cols-2 md:grid-cols-4 gap-6 pt-10 border-t border-slate-800/80 max-w-4xl mx-auto text-left">
                 <div class="px-2">
                     <p class="text-2xl sm:text-3xl font-bold font-serif text-gold-400">100%</p>
-                    <p class="text-xs sm:text-sm text-slate-400 mt-1">Native English Workforce</p>
+                    <p class="text-xs sm:text-sm text-slate-400 mt-1">Native English Proficiency</p>
                 </div>
                 <div class="px-2">
                     <p class="text-2xl sm:text-3xl font-bold font-serif text-gold-400">US Time</p>
-                    <p class="text-xs sm:text-sm text-slate-400 mt-1">Central & Mountain Aligned</p>
+                    <p class="text-xs sm:text-sm text-slate-400 mt-1">Central Time Zone Aligned</p>
                 </div>
                 <div class="px-2">
                     <p class="text-2xl sm:text-3xl font-bold font-serif text-gold-400">24 / 7</p>
-                    <p class="text-xs sm:text-sm text-slate-400 mt-1">Multi-Channel Operations</p>
+                    <p class="text-xs sm:text-sm text-slate-400 mt-1">Omnichannel Contact Center</p>
                 </div>
                 <div class="px-2">
                     <p class="text-2xl sm:text-3xl font-bold font-serif text-gold-400">ISO-Ready</p>
-                    <p class="text-xs sm:text-sm text-slate-400 mt-1">Compliance & Governance</p>
+                    <p class="text-xs sm:text-sm text-slate-400 mt-1">Corporate Governance</p>
                 </div>
             </div>
         </div>
@@ -158,7 +162,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
                 
-                <!-- Left Column: Vision & Narrative -->
+                <!-- Left Column: Narrative -->
                 <div>
                     <div class="inline-block text-gold-600 text-xs font-bold tracking-widest uppercase mb-2">Corporate Profile</div>
                     <h2 class="text-3xl sm:text-4xl font-serif font-bold text-charcoal-900 tracking-tight leading-tight">
@@ -168,29 +172,33 @@
                         <strong class="text-charcoal-900 font-semibold">For Legacy Ltd.</strong> is an executive management consultancy and high-performance Business Process Outsourcing (BPO) firm headquartered in Belize. We empower North American and global organizations to scale operational footprint seamlessly without sacrificing quality.
                     </p>
                     <p class="mt-4 text-slate-600 leading-relaxed">
-                        Leveraging Belize’s position as the only official English-speaking nation in Central America, we combine direct cultural affinity with rigorous SLA enforcement, operational efficiency, and low-friction workforce expansion.
+                        Leveraging Belize’s position as the primary official English-speaking country in Central America, we combine direct cultural affinity with rigorous SLA enforcement, operational efficiency, and low-friction workforce expansion.
                     </p>
 
                     <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4">
                         <div class="p-4 rounded-xl bg-[#F8F9FA] border-l-4 border-gold-500">
                             <h4 class="font-bold text-charcoal-900 text-sm">Cultural Alignment</h4>
-                            <p class="text-xs text-slate-500 mt-1">Deep familiarity with US consumer markets and communication standards.</p>
+                            <p class="text-xs text-slate-500 mt-1">Deep familiarity with US consumer expectations and communication standards.</p>
                         </div>
                         <div class="p-4 rounded-xl bg-[#F8F9FA] border-l-4 border-gold-500">
                             <h4 class="font-bold text-charcoal-900 text-sm">SLA Optimization</h4>
-                            <p class="text-xs text-slate-500 mt-1">Data-driven real-time analysis to drive CSAT and reduce customer churn.</p>
+                            <p class="text-xs text-slate-500 mt-1">Data-driven analysis to elevate CSAT and minimize customer churn.</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- Right Column: Visual Highlight Box -->
+                <!-- Right Column: Corporate Registry Highlight -->
                 <div class="relative">
                     <div class="absolute -inset-2 rounded-2xl bg-gradient-to-tr from-gold-500/20 to-charcoal-900/10 blur-xl opacity-70"></div>
                     <div class="relative bg-charcoal-900 text-white rounded-2xl p-8 sm:p-10 border border-gold-500/30 shadow-2xl">
+                        
                         <div class="flex items-center justify-between border-b border-slate-800 pb-6 mb-6">
-                            <div>
-                                <p class="text-xs text-gold-400 font-medium uppercase tracking-wider">Registered Entity</p>
-                                <p class="text-xl font-bold font-serif text-white">For Legacy Ltd.</p>
+                            <div class="flex items-center gap-3">
+                                <img src="https://i.imgur.com/S5Amdci.png" alt="Logo" class="h-8 w-auto">
+                                <div>
+                                    <p class="text-xs text-gold-400 font-medium uppercase tracking-wider">Registered Corporate Entity</p>
+                                    <p class="text-xl font-bold font-serif text-white">For Legacy Ltd.</p>
+                                </div>
                             </div>
                             <span class="text-xs font-mono bg-charcoal-800 px-3 py-1 rounded text-slate-300 border border-slate-700">Reg: 000060113</span>
                         </div>
@@ -198,21 +206,21 @@
                         <ul class="space-y-4">
                             <li class="flex items-start gap-3">
                                 <i class="fa-solid fa-circle-check text-gold-500 mt-1"></i>
-                                <span class="text-sm text-slate-300"><strong class="text-white">ISIC 8220:</strong> Business Process Outsourcing & Contact Center Management</span>
+                                <span class="text-sm text-slate-300"><strong class="text-white">ISIC 8220:</strong> Business Process Outsourcing & Call Centre Services</span>
                             </li>
                             <li class="flex items-start gap-3">
                                 <i class="fa-solid fa-circle-check text-gold-500 mt-1"></i>
-                                <span class="text-sm text-slate-300"><strong class="text-white">ISIC 7020:</strong> Executive Management Consultancy & Operations Consulting</span>
+                                <span class="text-sm text-slate-300"><strong class="text-white">ISIC 7020:</strong> Executive Management Consultancy & Strategic Operations</span>
                             </li>
                             <li class="flex items-start gap-3">
                                 <i class="fa-solid fa-circle-check text-gold-500 mt-1"></i>
-                                <span class="text-sm text-slate-300"><strong class="text-white">Location Advantage:</strong> Lords Bank Corporate Hub, Belize District</span>
+                                <span class="text-sm text-slate-300"><strong class="text-white">Registered Address:</strong> Lot 310, 50 Lords Bank Rd, Lords Bank, Belize</span>
                             </li>
                         </ul>
 
                         <div class="mt-8 pt-6 border-t border-slate-800 flex items-center justify-between text-xs text-slate-400">
                             <span>Governance & Regulatory Compliant</span>
-                            <span class="text-gold-400 font-semibold">Belize Corporate Jurisdiction</span>
+                            <span class="text-gold-400 font-semibold">Belize District Jurisdiction</span>
                         </div>
                     </div>
                 </div>
@@ -225,9 +233,9 @@
     <section id="services" class="py-20 sm:py-28 bg-[#F8F9FA] border-t border-slate-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-16">
-                <span class="text-gold-600 text-xs font-bold tracking-widest uppercase">Our Core Competencies</span>
-                <h2 class="text-3xl sm:text-4xl font-serif font-bold text-charcoal-900 mt-2">Solutions Designed for Enterprise Scale</h2>
-                <p class="text-slate-600 mt-4 text-base">We combine modern digital infrastructure with disciplined operational management to deliver end-to-end service excellence.</p>
+                <span class="text-gold-600 text-xs font-bold tracking-widest uppercase">Our Core Services</span>
+                <h2 class="text-3xl sm:text-4xl font-serif font-bold text-charcoal-900 mt-2">Enterprise Solutions Engineered for Scaling</h2>
+                <p class="text-slate-600 mt-4 text-base">Integrating workforce intelligence with disciplined operational management to deliver measurable ROI.</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -238,15 +246,15 @@
                         <div class="w-14 h-14 rounded-xl bg-charcoal-900 text-gold-500 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
                             <i class="fa-solid fa-headset"></i>
                         </div>
-                        <h3 class="text-xl font-serif font-bold text-charcoal-900 mb-3">Business Process Outsourcing (BPO)</h3>
+                        <h3 class="text-xl font-serif font-bold text-charcoal-900 mb-3">Call Centre & BPO Services (ISIC 8220)</h3>
                         <p class="text-slate-600 text-sm leading-relaxed mb-6">
-                            Omnichannel customer engagement solutions designed to protect your brand reputation while maintaining strict CSAT standards.
+                            Omnichannel contact center support built to protect your brand reputation while enforcing high CSAT standards.
                         </p>
                         <ul class="space-y-2.5 text-xs text-slate-600">
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-angle-right text-gold-500"></i> Multi-line voice, chat & email support</li>
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-angle-right text-gold-500"></i> Tier-1 & Tier-2 technical desk routing</li>
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-angle-right text-gold-500"></i> 24/7/365 coverage & escalation workflows</li>
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-angle-right text-gold-500"></i> Dedicated QA & monitoring frameworks</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-angle-right text-gold-500"></i> Inbound & outbound voice customer care</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-angle-right text-gold-500"></i> Omnichannel chat, email, and social desk</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-angle-right text-gold-500"></i> Tier-1 & Tier-2 helpdesk technical support</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-angle-right text-gold-500"></i> Real-time QA monitoring & SLA tracking</li>
                         </ul>
                     </div>
                     <div class="mt-8 pt-4 border-t border-slate-100">
@@ -256,7 +264,31 @@
                     </div>
                 </div>
 
-                <!-- Service 2: Workforce Management -->
+                <!-- Service 2: Management Consultancy -->
+                <div class="bg-white rounded-2xl p-8 border border-slate-200 hover:border-gold-500 transition-all duration-300 gold-border-glow flex flex-col justify-between group">
+                    <div>
+                        <div class="w-14 h-14 rounded-xl bg-charcoal-900 text-gold-500 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-briefcase"></i>
+                        </div>
+                        <h3 class="text-xl font-serif font-bold text-charcoal-900 mb-3">Management Consultancy (ISIC 7020)</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                            Strategic governance, workflow design, and regulatory compliance roadmapping for cross-border expansion.
+                        </p>
+                        <ul class="space-y-2.5 text-xs text-slate-600">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-angle-right text-gold-500"></i> Corporate governance & structural design</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-angle-right text-gold-500"></i> Regulatory roadmapping (Tax, SSB & Municipal)</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-angle-right text-gold-500"></i> Nearshore expansion strategy</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-angle-right text-gold-500"></i> Fiscal controls & compliance auditing</li>
+                        </ul>
+                    </div>
+                    <div class="mt-8 pt-4 border-t border-slate-100">
+                        <a href="#contact" class="text-xs font-bold text-charcoal-900 group-hover:text-gold-600 transition-colors inline-flex items-center gap-1">
+                            Schedule Advisory Call <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Service 3: Workforce Optimization -->
                 <div class="bg-white rounded-2xl p-8 border border-slate-200 hover:border-gold-500 transition-all duration-300 gold-border-glow flex flex-col justify-between group">
                     <div>
                         <div class="w-14 h-14 rounded-xl bg-charcoal-900 text-gold-500 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
@@ -264,42 +296,18 @@
                         </div>
                         <h3 class="text-xl font-serif font-bold text-charcoal-900 mb-3">Workforce Optimization & Operations</h3>
                         <p class="text-slate-600 text-sm leading-relaxed mb-6">
-                            Data-backed real-time workforce analysis, SOP formulation, and retention strategies to streamline team productivity.
+                            Data-driven real-time workforce management, SOP formulation, and retention strategies to streamline operations.
                         </p>
                         <ul class="space-y-2.5 text-xs text-slate-600">
                             <li class="flex items-center gap-2"><i class="fa-solid fa-angle-right text-gold-500"></i> Standard Operating Procedure (SOP) design</li>
                             <li class="flex items-center gap-2"><i class="fa-solid fa-angle-right text-gold-500"></i> Real-Time Analysis (RTA) & scheduling</li>
                             <li class="flex items-center gap-2"><i class="fa-solid fa-angle-right text-gold-500"></i> Staff onboarding & continuous coaching</li>
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-angle-right text-gold-500"></i> Attrition reduction & talent retention</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-angle-right text-gold-500"></i> Talent retention & attrition mitigation</li>
                         </ul>
                     </div>
                     <div class="mt-8 pt-4 border-t border-slate-100">
                         <a href="#contact" class="text-xs font-bold text-charcoal-900 group-hover:text-gold-600 transition-colors inline-flex items-center gap-1">
                             Request Operations Review <i class="fa-solid fa-arrow-right text-[10px]"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Service 3: Executive Consultancy -->
-                <div class="bg-white rounded-2xl p-8 border border-slate-200 hover:border-gold-500 transition-all duration-300 gold-border-glow flex flex-col justify-between group">
-                    <div>
-                        <div class="w-14 h-14 rounded-xl bg-charcoal-900 text-gold-500 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
-                            <i class="fa-solid fa-briefcase"></i>
-                        </div>
-                        <h3 class="text-xl font-serif font-bold text-charcoal-900 mb-3">Executive Management Consultancy</h3>
-                        <p class="text-slate-600 text-sm leading-relaxed mb-6">
-                            Strategic governance, corporate structure design, and cross-border operational setup for emerging and enterprise firms.
-                        </p>
-                        <ul class="space-y-2.5 text-xs text-slate-600">
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-angle-right text-gold-500"></i> Enterprise workflow architecture</li>
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-angle-right text-gold-500"></i> Regulatory compliance & tax roadmapping</li>
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-angle-right text-gold-500"></i> Corporate governance & fiscal controls</li>
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-angle-right text-gold-500"></i> Nearshore expansion strategy</li>
-                        </ul>
-                    </div>
-                    <div class="mt-8 pt-4 border-t border-slate-100">
-                        <a href="#contact" class="text-xs font-bold text-charcoal-900 group-hover:text-gold-600 transition-colors inline-flex items-center gap-1">
-                            Schedule Advisory Call <i class="fa-solid fa-arrow-right text-[10px]"></i>
                         </a>
                     </div>
                 </div>
@@ -313,29 +321,29 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-16">
                 <span class="text-gold-600 text-xs font-bold tracking-widest uppercase">Executive Leadership</span>
-                <h2 class="text-3xl sm:text-4xl font-serif font-bold text-charcoal-900 mt-2">Governance & Vision</h2>
-                <p class="text-slate-600 mt-4 text-base">Guided by seasoned executive stewardship dedicated to operational integrity and regional economic growth.</p>
+                <h2 class="text-3xl sm:text-4xl font-serif font-bold text-charcoal-900 mt-2">Governance & Executive Stewardship</h2>
+                <p class="text-slate-600 mt-4 text-base">Guided by leadership dedicated to corporate integrity, operational excellence, and economic innovation.</p>
             </div>
 
-            <!-- Leadership Card: Brian Flowers Sr. -->
+            <!-- Leadership Spotlight: Brian Flowers Sr. -->
             <div class="max-w-4xl mx-auto bg-charcoal-900 text-white rounded-2xl overflow-hidden shadow-2xl border border-gold-500/30">
                 <div class="grid grid-cols-1 md:grid-cols-12 items-stretch">
                     
-                    <!-- Left Accent Column -->
+                    <!-- Left Accent Box -->
                     <div class="md:col-span-4 bg-gradient-to-b from-charcoal-800 to-charcoal-950 p-8 flex flex-col justify-center items-center text-center border-b md:border-b-0 md:border-r border-gold-500/20">
                         <div class="w-28 h-28 rounded-full bg-gold-500/10 border-2 border-gold-500 flex items-center justify-center text-gold-400 text-4xl mb-4 shadow-lg">
                             <i class="fa-solid fa-user-tie"></i>
                         </div>
                         <h3 class="text-xl font-serif font-bold text-white">Brian Flowers Sr.</h3>
                         <p class="text-xs text-gold-400 font-semibold uppercase tracking-wider mt-1">Chairman & Executive Lead</p>
-                        <p class="text-[11px] text-slate-400 mt-3">For Legacy Ltd.</p>
+                        <p class="text-[11px] text-slate-400 mt-2">For Legacy Ltd.</p>
                     </div>
 
-                    <!-- Right Bio Column -->
+                    <!-- Right Profile Bio -->
                     <div class="md:col-span-8 p-8 sm:p-10 flex flex-col justify-center">
-                        <h4 class="text-lg font-serif font-bold text-gold-400 mb-3">Executive Summary</h4>
+                        <h4 class="text-lg font-serif font-bold text-gold-400 mb-3">Executive Stewardship</h4>
                         <p class="text-slate-300 text-sm leading-relaxed mb-6">
-                            Brian Flowers Sr. leads the strategic direction and corporate governance of For Legacy Ltd. With extensive leadership expertise across operational management, commercial strategy, and organizational development, he drives the entity's commitment to nearshore BPO excellence and corporate compliance in Belize.
+                            Brian Flowers Sr. provides overall strategic oversight, policy governance, and corporate leadership for For Legacy Ltd. Bringing extensive management expertise across organizational scaling and commercial strategy, he directs the firm’s nearshore BPO roadmap and regulatory compliance framework in Belize.
                         </p>
                         
                         <div class="grid grid-cols-2 gap-4 text-xs pt-4 border-t border-slate-800">
@@ -345,7 +353,7 @@
                             </div>
                             <div>
                                 <span class="text-slate-400 block">Jurisdiction:</span>
-                                <span class="text-slate-200 font-semibold">Belize & Nearshore Markets</span>
+                                <span class="text-slate-200 font-semibold">Belize & Global Nearshore</span>
                             </div>
                         </div>
                     </div>
@@ -361,13 +369,13 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
                 
-                <!-- Contact Info Column -->
+                <!-- Contact Information Column -->
                 <div class="lg:col-span-5 flex flex-col justify-between">
                     <div>
                         <span class="text-gold-400 text-xs font-bold tracking-widest uppercase">Connect With Us</span>
                         <h2 class="text-3xl sm:text-4xl font-serif font-bold text-white mt-2">Let’s Build Your Legacy Operations</h2>
                         <p class="text-slate-400 mt-4 text-sm leading-relaxed">
-                            Reach out to our executive team to discuss BPO capacity, management consultancy engagements, or nearshore corporate partnerships.
+                            Get in touch with our executive team to discuss BPO service capacity, management consultancy engagements, or enterprise partnerships.
                         </p>
 
                         <div class="mt-8 space-y-6">
@@ -403,14 +411,14 @@
                         </div>
                     </div>
 
-                    <!-- Company Registration Badge -->
+                    <!-- Registration Badge -->
                     <div class="mt-12 p-4 rounded-xl bg-charcoal-900 border border-slate-800 text-xs text-slate-400">
-                        <p><strong class="text-gold-400">For Legacy Ltd.</strong> | Reg. No. 000060113</p>
-                        <p class="mt-0.5">Licensed & Registered Entity under the Laws of Belize.</p>
+                        <p><strong class="text-gold-400">For Legacy Ltd.</strong> | Registration No. 000060113</p>
+                        <p class="mt-0.5">Duly incorporated under the Belize Companies Act.</p>
                     </div>
                 </div>
 
-                <!-- Interactive Contact Form -->
+                <!-- Contact / Inquiry Form -->
                 <div class="lg:col-span-7 bg-charcoal-900 p-8 sm:p-10 rounded-2xl border border-gold-500/30 shadow-2xl">
                     <h3 class="text-xl font-serif font-bold text-white mb-6">Send an Inquiry</h3>
                     
@@ -434,17 +442,17 @@
                             <div>
                                 <label class="block text-xs font-medium text-slate-300 mb-1">Service Interest</label>
                                 <select class="w-full px-4 py-3 rounded-lg bg-charcoal-950 border border-slate-800 text-white text-sm focus:outline-none focus:border-gold-500 transition-colors">
-                                    <option value="bpo">BPO & Customer Support</option>
+                                    <option value="bpo">BPO & Contact Center Services (ISIC 8220)</option>
+                                    <option value="consultancy">Management Consultancy (ISIC 7020)</option>
                                     <option value="wfm">Workforce Optimization</option>
-                                    <option value="consultancy">Management Consultancy</option>
-                                    <option value="other">General Inquiry</option>
+                                    <option value="other">General Partnership Inquiry</option>
                                 </select>
                             </div>
                         </div>
 
                         <div>
                             <label class="block text-xs font-medium text-slate-300 mb-1">Message *</label>
-                            <textarea rows="4" required class="w-full px-4 py-3 rounded-lg bg-charcoal-950 border border-slate-800 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-gold-500 transition-colors" placeholder="Describe your operational requirements or project scope..."></textarea>
+                            <textarea rows="4" required class="w-full px-4 py-3 rounded-lg bg-charcoal-950 border border-slate-800 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-gold-500 transition-colors" placeholder="Describe your operational scope or consultancy requirements..."></textarea>
                         </div>
 
                         <button type="submit" class="w-full py-4 rounded-lg bg-gold-500 text-charcoal-900 font-bold text-sm hover:bg-gold-400 transition-all shadow-lg shadow-gold-500/20">
@@ -452,16 +460,16 @@
                         </button>
                     </form>
 
-                    <!-- Success Message Container -->
+                    <!-- Success Alert Box -->
                     <div id="form-success" class="hidden mt-4 p-4 rounded-lg bg-emerald-900/50 border border-emerald-500 text-emerald-200 text-xs text-center">
                         <i class="fa-solid fa-circle-check text-emerald-400 mr-2 text-sm"></i>
-                        Thank you for reaching out! Your message has been received by For Legacy Ltd. We will respond within 24 hours.
+                        Thank you for reaching out! Your inquiry has been routed to admin@forlegacyltd.com. We will respond within 24 hours.
                     </div>
                 </div>
 
             </div>
 
-            <!-- Dark Footer Bottom Bar -->
+            <!-- Dark Footer -->
             <div class="mt-20 pt-8 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
                 <p>&copy; 2026 For Legacy Ltd. All rights reserved. Registered Entity No. 000060113.</p>
                 <div class="flex gap-6">
@@ -473,9 +481,8 @@
         </div>
     </section>
 
-    <!-- Simple Interactivity Scripts -->
+    <!-- JavaScript Navigation Logic -->
     <script>
-        // Mobile Menu Toggle Logic
         const mobileMenuBtn = document.getElementById('mobile-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
         const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
@@ -490,7 +497,6 @@
             });
         });
 
-        // Contact Form Handler Simulation
         function handleFormSubmit(event) {
             event.preventDefault();
             const form = document.getElementById('contact-form');
