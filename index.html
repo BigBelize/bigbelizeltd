@@ -1,728 +1,503 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>For Legacy Ltd. | Nearshore BPO & Management Consultancy</title>
-    <!-- Google Fonts -->
+    <title>For Legacy Ltd. | Strategic BPO & Management Consultancy Solutions</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter & Playfair Display -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: {
+                            400: '#E5C158',
+                            500: '#D4AF37', // Primary Brand Gold
+                            600: '#B89320',
+                        },
+                        charcoal: {
+                            800: '#222222',
+                            900: '#1A1A1A', // Primary Brand Charcoal
+                            950: '#121212',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
     <style>
-        :root {
-            --bg-primary: #121212;
-            --bg-secondary: #1A1A1A;
-            --bg-card: #222222;
-            --gold-primary: #D4AF37;
-            --gold-light: #F3E5AB;
-            --gold-dark: #AA7C11;
-            --text-main: #F4F4F4;
-            --text-muted: #A0A0A0;
-            --border-color: rgba(212, 175, 55, 0.25);
-            --border-hover: rgba(212, 175, 55, 0.6);
-            --shadow-gold: 0 8px 30px rgba(212, 175, 55, 0.12);
-        }
-
-        /* --- Global Reset & Essential Scroll Fixes --- */
-        *, *::before, *::after {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        html, body {
-            width: 100%;
-            height: auto !important;
-            min-height: 100%;
-            overflow-x: hidden;
-            overflow-y: auto !important; /* Forces native page scrolling */
-            background-color: var(--bg-primary);
-            color: var(--text-main);
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            line-height: 1.6;
-            scroll-behavior: smooth;
-        }
-
-        h1, h2, h3, .brand-font {
-            font-family: 'Cinzel', serif;
-        }
-
-        a {
-            color: inherit;
-            text-decoration: none;
-        }
-
-        /* --- Header & Navigation --- */
-        header {
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            background: rgba(26, 26, 26, 0.92);
-            backdrop-filter: blur(12px);
-            border-bottom: 1px solid var(--border-color);
-            padding: 0.85rem 2rem;
-        }
-
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .brand-logo-group {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .brand-logo-img {
-            height: 48px;
-            width: auto;
-            object-fit: contain;
-        }
-
-        .brand-titles {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .brand-name {
-            font-size: 1.25rem;
-            font-weight: 700;
-            letter-spacing: 1.5px;
-            color: var(--gold-primary);
-        }
-
-        .brand-tagline {
-            font-size: 0.65rem;
-            letter-spacing: 2px;
-            color: var(--text-muted);
-            text-transform: uppercase;
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-            align-items: center;
-        }
-
-        nav a {
-            font-size: 0.9rem;
-            font-weight: 500;
-            letter-spacing: 0.5px;
-            transition: color 0.3s ease;
-        }
-
-        nav a:hover {
-            color: var(--gold-primary);
-        }
-
-        .btn-gold {
-            background: linear-gradient(135deg, var(--gold-primary), var(--gold-dark));
-            color: #121212;
-            font-weight: 700;
-            padding: 0.65rem 1.4rem;
-            border-radius: 4px;
-            letter-spacing: 0.5px;
-            transition: all 0.3s ease;
-            display: inline-block;
-            border: none;
-            cursor: pointer;
-        }
-
-        .btn-gold:hover {
-            box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
-            transform: translateY(-2px);
-            color: #000;
-        }
-
-        /* --- Hero Section --- */
-        .hero {
-            position: relative;
-            min-height: 85vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 4rem 1.5rem;
-            background: radial-gradient(circle at center, rgba(26, 26, 26, 0.8) 0%, var(--bg-primary) 100%);
-            overflow: hidden;
-        }
-
-        /* Background Watermark */
-        .hero-watermark {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 500px;
-            max-width: 80vw;
-            opacity: 0.04;
-            pointer-events: none;
-            z-index: 1;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 2;
-            max-width: 900px;
-        }
-
-        .hero-badge {
-            display: inline-block;
-            border: 1px solid var(--border-color);
-            background: rgba(212, 175, 55, 0.08);
-            color: var(--gold-primary);
-            font-size: 0.75rem;
-            font-weight: 600;
-            padding: 0.35rem 1rem;
-            border-radius: 20px;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-            margin-bottom: 1.5rem;
-        }
-
-        .hero h1 {
-            font-size: clamp(2.2rem, 5vw, 3.8rem);
-            line-height: 1.2;
-            margin-bottom: 1.5rem;
-            color: var(--text-main);
-        }
-
-        .hero h1 span {
-            background: linear-gradient(135deg, var(--gold-light), var(--gold-primary));
+        /* Glassmorphism & Gold Effects */
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #F3E5AB 0%, #D4AF37 50%, #AA7C11 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
-
-        .hero p {
-            font-size: 1.15rem;
-            color: var(--text-muted);
-            margin-bottom: 2.5rem;
-            max-width: 720px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .hero-actions {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .btn-outline {
-            border: 1px solid var(--border-color);
-            color: var(--text-main);
-            padding: 0.65rem 1.4rem;
-            border-radius: 4px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-        }
-
-        .btn-outline:hover {
-            border-color: var(--gold-primary);
-            color: var(--gold-primary);
-            background: rgba(212, 175, 55, 0.05);
-        }
-
-        /* --- Generic Section Wrappers --- */
-        .section {
-            padding: 5rem 1.5rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 3.5rem;
-        }
-
-        .section-header h2 {
-            font-size: 2.2rem;
-            color: var(--gold-primary);
-            margin-bottom: 0.5rem;
-        }
-
-        .section-header p {
-            color: var(--text-muted);
-            font-size: 1rem;
-        }
-
-        /* --- About Section --- */
-        .about-card {
-            background: var(--bg-secondary);
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            padding: 3rem;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2.5rem;
-            align-items: center;
-        }
-
-        .about-text h3 {
-            font-size: 1.6rem;
-            margin-bottom: 1rem;
-            color: var(--text-main);
-        }
-
-        .about-text p {
-            color: var(--text-muted);
-            margin-bottom: 1.2rem;
-            font-size: 0.98rem;
-        }
-
-        .legal-badge-group {
-            display: flex;
-            gap: 1.5rem;
-            margin-top: 1.5rem;
-        }
-
-        .legal-item {
-            background: var(--bg-card);
-            border-left: 3px solid var(--gold-primary);
-            padding: 0.75rem 1rem;
-            border-radius: 0 4px 4px 0;
-        }
-
-        .legal-item span {
-            display: block;
-            font-size: 0.7rem;
-            color: var(--text-muted);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .legal-item strong {
-            color: var(--gold-light);
-            font-size: 0.95rem;
-        }
-
-        /* --- Services Section --- */
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2rem;
-        }
-
-        .service-card {
-            background: var(--bg-secondary);
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            padding: 2.5rem 2rem;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .service-card:hover {
-            border-color: var(--border-hover);
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-gold);
-        }
-
-        .service-code {
-            position: absolute;
-            top: 1.2rem;
-            right: 1.2rem;
-            font-size: 0.7rem;
-            color: var(--gold-primary);
-            border: 1px solid var(--border-color);
-            padding: 0.2rem 0.6rem;
-            border-radius: 4px;
-            background: rgba(212, 175, 55, 0.05);
-        }
-
-        .service-card h3 {
-            font-size: 1.4rem;
-            margin-bottom: 1rem;
-            color: var(--gold-light);
-        }
-
-        .service-card p {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .service-list {
-            list-style: none;
-        }
-
-        .service-list li {
-            position: relative;
-            padding-left: 1.25rem;
-            margin-bottom: 0.6rem;
-            font-size: 0.9rem;
-            color: var(--text-main);
-        }
-
-        .service-list li::before {
-            content: "◆";
-            position: absolute;
-            left: 0;
-            color: var(--gold-primary);
-            font-size: 0.6rem;
-            top: 0.25rem;
-        }
-
-        /* --- Executive Leadership --- */
-        .leadership-wrapper {
-            display: flex;
-            justify-content: center;
-        }
-
-        .leader-card {
-            background: var(--bg-secondary);
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            max-width: 480px;
-            width: 100%;
-            overflow: hidden;
-            text-align: center;
-            transition: border-color 0.3s ease;
-        }
-
-        .leader-card:hover {
-            border-color: var(--gold-primary);
-        }
-
-        .leader-img-container {
-            width: 100%;
-            height: 320px;
-            background: var(--bg-card);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .leader-img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: top center;
-        }
-
-        .leader-info {
-            padding: 2rem;
-        }
-
-        .leader-info h3 {
-            font-size: 1.5rem;
-            color: var(--gold-primary);
-            margin-bottom: 0.25rem;
-        }
-
-        .leader-title {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            margin-bottom: 1rem;
-            display: block;
-        }
-
-        .leader-bio {
-            font-size: 0.92rem;
-            color: var(--text-main);
-        }
-
-        /* --- Contact Section --- */
-        .contact-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2.5rem;
-            background: var(--bg-secondary);
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            padding: 3rem;
-        }
-
-        .contact-info h3 {
-            font-size: 1.5rem;
-            color: var(--gold-primary);
-            margin-bottom: 1rem;
-        }
-
-        .contact-info p {
-            color: var(--text-muted);
-            margin-bottom: 2rem;
-        }
-
-        .info-detail {
-            margin-bottom: 1.25rem;
-        }
-
-        .info-detail strong {
-            display: block;
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: var(--gold-primary);
-        }
-
-        .info-detail span {
-            color: var(--text-main);
-            font-size: 0.95rem;
-        }
-
-        .contact-form .form-group {
-            margin-bottom: 1.25rem;
-        }
-
-        .contact-form label {
-            display: block;
-            font-size: 0.8rem;
-            color: var(--text-muted);
-            margin-bottom: 0.35rem;
-            text-transform: uppercase;
-        }
-
-        .contact-form input,
-        .contact-form textarea {
-            width: 100%;
-            padding: 0.75rem;
-            background: var(--bg-primary);
-            border: 1px solid var(--border-color);
-            border-radius: 4px;
-            color: var(--text-main);
-            font-family: inherit;
-        }
-
-        .contact-form input:focus,
-        .contact-form textarea:focus {
-            outline: none;
-            border-color: var(--gold-primary);
-        }
-
-        /* --- Footer --- */
-        footer {
-            background: #0A0A0A;
-            border-top: 1px solid var(--border-color);
-            padding: 2.5rem 1.5rem 1.5rem 1.5rem;
-            text-align: center;
-        }
-
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .footer-logo {
-            height: 36px;
-            opacity: 0.8;
-        }
-
-        .footer-legal {
-            color: var(--text-muted);
-            font-size: 0.8rem;
-        }
-
-        /* --- Responsive Styles --- */
-        @media (max-width: 768px) {
-            nav ul {
-                display: none; /* Mobile menu can be expanded as needed */
-            }
-
-            .about-card,
-            .contact-container {
-                grid-template-columns: 1fr;
-                padding: 1.75rem;
-            }
-
-            .legal-badge-group {
-                flex-direction: column;
-                gap: 0.75rem;
-            }
+        .gold-border-glow:hover {
+            box-shadow: 0 0 25px rgba(212, 175, 55, 0.25);
         }
     </style>
 </head>
-<body>
+<body class="bg-[#F8F9FA] text-slate-800 font-sans antialiased selection:bg-gold-500 selection:text-charcoal-900">
 
-    <!-- Header Navigation -->
-    <header>
-        <div class="nav-container">
-            <a href="#" class="brand-logo-group">
-                <img src="https://raw.githubusercontent.com/BigBelize/bigbelizeltd/main/Letter%20Head.png" 
-                     alt="For Legacy Ltd. Logo" 
-                     class="brand-logo-img"
-                     onerror="this.onerror=null; this.src='https://i.imgur.com/S5Amdci.png';">
-                <div class="brand-titles">
-                    <span class="brand-name brand-font">FOR LEGACY LTD.</span>
-                    <span class="brand-tagline">Nearshore BPO & Consultancy</span>
+    <!-- HEADER / NAVIGATION -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-charcoal-900/95 backdrop-blur-md border-b border-gold-500/20 text-white transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                
+                <!-- Corporate Logo Image from GitHub -->
+                <a href="#home" class="flex items-center gap-3 group focus:outline-none">
+                    <img src="https://raw.githubusercontent.com/BigBelize/bigbelizeltd/main/Letter%20Head.png" alt="For Legacy Ltd. Logo" class="h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-105" onerror="this.onerror=null; this.src='https://placehold.co/200x80/1A1A1A/D4AF37?text=For+Legacy+Ltd';">
+                    <div class="flex flex-col">
+                        <span class="text-xl font-bold tracking-widest text-white group-hover:text-gold-500 transition-colors">FOR LEGACY LTD.</span>
+                        <span class="text-[10px] tracking-widest text-gold-400 font-medium uppercase">Nearshore BPO & Consultancy</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="text-sm font-medium text-slate-200 hover:text-gold-500 transition-colors">Home</a>
+                    <a href="#services" class="text-sm font-medium text-slate-200 hover:text-gold-500 transition-colors">Services</a>
+                    <a href="#leadership" class="text-sm font-medium text-slate-200 hover:text-gold-500 transition-colors">Leadership</a>
+                    <a href="#about" class="text-sm font-medium text-slate-200 hover:text-gold-500 transition-colors">About</a>
+                    <a href="#contact" class="px-5 py-2.5 rounded-full text-sm font-semibold bg-gold-500 text-charcoal-900 hover:bg-gold-400 transition-all shadow-md hover:shadow-gold-500/20">Contact</a>
+                </nav>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" type="button" class="text-slate-300 hover:text-gold-500 focus:outline-none p-2" aria-label="Toggle menu">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
                 </div>
-            </a>
-            <nav>
-                <ul>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#leadership">Leadership</a></li>
-                    <li><a href="#contact" class="btn-gold">Contact Us</a></li>
-                </ul>
-            </nav>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Drawer -->
+        <div id="mobile-menu" class="hidden md:hidden bg-charcoal-950 border-b border-gold-500/20 px-4 pt-2 pb-6 space-y-3">
+            <a href="#home" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-slate-200 hover:text-gold-500 hover:bg-charcoal-900">Home</a>
+            <a href="#services" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-slate-200 hover:text-gold-500 hover:bg-charcoal-900">Services</a>
+            <a href="#leadership" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-slate-200 hover:text-gold-500 hover:bg-charcoal-900">Leadership</a>
+            <a href="#about" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-slate-200 hover:text-gold-500 hover:bg-charcoal-900">About</a>
+            <a href="#contact" class="mobile-nav-link block text-center px-4 py-3 rounded-md text-base font-semibold bg-gold-500 text-charcoal-900 hover:bg-gold-400">Contact Executive Office</a>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <img src="https://raw.githubusercontent.com/BigBelize/bigbelizeltd/main/Letter%20Head.png" 
-             alt="Watermark" 
-             class="hero-watermark">
-        <div class="hero-content">
-            <span class="hero-badge">Belize Nearshore Advantage</span>
-            <h1>Empowering Global Operations with <span>Nearshore BPO & Management</span> Excellence</h1>
-            <p>Scalable contact center solutions, workforce optimization, and executive enterprise consultation tailored for modern business growth.</p>
-            <div class="hero-actions">
-                <a href="#contact" class="btn-gold">Partner With Us</a>
-                <a href="#services" class="btn-outline">Explore Solutions</a>
-            </div>
+    <!-- HERO SECTION -->
+    <section id="home" class="relative pt-32 pb-24 md:pt-44 md:pb-36 bg-charcoal-950 text-white overflow-hidden">
+        <!-- Subtle Pattern Background Overlay -->
+        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#D4AF37_1px,transparent_1px)] [background-size:24px_24px]"></div>
+        
+        <!-- Watermark Logo Background Graphic -->
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] sm:w-[650px] opacity-10 pointer-events-none select-none filter brightness-200 contrast-125">
+            <img src="https://raw.githubusercontent.com/BigBelize/bigbelizeltd/main/Letter%20Head.png" alt="Watermark Background" class="w-full h-auto object-contain mx-auto">
         </div>
-    </section>
 
-    <!-- About Section -->
-    <section id="about" class="section">
-        <div class="about-card">
-            <div class="about-text">
-                <h3 class="brand-font">Built for Scalability, Driven by Legacy</h3>
-                <p>For Legacy Ltd. is a premier Belizean corporate entity operating at the intersection of high-volume customer interaction management and high-level corporate administration.</p>
-                <p>Leveraging Belize’s native English proficiency, favorable Central Standard Time (CST) location, and robust regulatory compliance framework, we provide nearshore enterprise solutions for international partners.</p>
-                <div class="legal-badge-group">
-                    <div class="legal-item">
-                        <span>Company Registration</span>
-                        <strong>No. 000060113</strong>
-                    </div>
-                    <div class="legal-item">
-                        <span>Jurisdiction</span>
-                        <strong>Belize, Central America</strong>
-                    </div>
+        <!-- Subtle Radial Light Glow -->
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gold-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gold-500/10 border border-gold-500/30 text-gold-400 text-xs sm:text-sm font-semibold tracking-wide uppercase mb-8">
+                <span class="w-2.5 h-2.5 rounded-full bg-gold-500 animate-pulse"></span>
+                Nearshore Operations & Strategic Advisory
+            </div>
+
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold font-serif tracking-tight text-white max-w-4xl mx-auto leading-tight sm:leading-tight">
+                Strategic BPO & Management Consultancy <span class="gold-gradient-text">Solutions</span>
+            </h1>
+
+            <p class="mt-6 text-lg sm:text-xl text-slate-300 max-w-3xl mx-auto font-light leading-relaxed">
+                Driving Operational Excellence and Scalable Business Growth Across LATAM & Global Markets.
+            </p>
+
+            <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <a href="#services" class="w-full sm:w-auto px-8 py-4 rounded-full font-semibold text-charcoal-900 bg-gold-500 hover:bg-gold-400 transition-all shadow-lg shadow-gold-500/20 text-center">
+                    Explore Our Services <i class="fa-solid fa-arrow-right ml-2 text-xs"></i>
+                </a>
+                <a href="#contact" class="w-full sm:w-auto px-8 py-4 rounded-full font-semibold text-slate-200 bg-charcoal-900 hover:bg-charcoal-800 border border-gold-500/30 hover:border-gold-500 transition-all text-center">
+                    Contact Executive Office
+                </a>
+            </div>
+
+            <!-- Key Metrics Bar -->
+            <div class="mt-16 sm:mt-24 grid grid-cols-2 md:grid-cols-4 gap-6 pt-10 border-t border-slate-800/80 max-w-4xl mx-auto text-left">
+                <div class="px-2">
+                    <p class="text-2xl sm:text-3xl font-bold font-serif text-gold-400">100%</p>
+                    <p class="text-xs sm:text-sm text-slate-400 mt-1">Native English Proficiency</p>
                 </div>
-            </div>
-            <div style="text-align: center;">
-                <img src="https://raw.githubusercontent.com/BigBelize/bigbelizeltd/main/Letter%20Head.png" 
-                     alt="For Legacy Seal" 
-                     style="max-width: 70%; height: auto; filter: drop-shadow(0 0 20px rgba(212,175,55,0.15));">
-            </div>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section id="services" class="section">
-        <div class="section-header">
-            <h2 class="brand-font">Core Capabilities</h2>
-            <p>Specialized enterprise offerings registered under official ISIC classifications.</p>
-        </div>
-        <div class="services-grid">
-            
-            <!-- Service 1: BPO -->
-            <div class="service-card">
-                <span class="service-code">ISIC 8220</span>
-                <h3 class="brand-font">Business Process Outsourcing</h3>
-                <p>Comprehensive omnichannel contact center management designed for operational speed, customer retention, and service precision.</p>
-                <ul class="service-list">
-                    <li>Inbound Customer Support & Helpdesk</li>
-                    <li>Technical Support & Dispatch Logistics</li>
-                    <li>Back-Office Processing & Workflow Automation</li>
-                    <li>Multi-Tier Escalation & Quality Assurance</li>
-                </ul>
-            </div>
-
-            <!-- Service 2: Consultancy -->
-            <div class="service-card">
-                <span class="service-code">ISIC 7020</span>
-                <h3 class="brand-font">Management Consultancy</h3>
-                <p>Strategic advisory and administrative leadership services for organizations scaling nearshore or optimizing internal operations.</p>
-                <ul class="service-list">
-                    <li>Operational Scaling & Capacity Planning</li>
-                    <li>Workforce Management & Routing Optimization</li>
-                    <li>Corporate Compliance & Regulatory Advisory</li>
-                    <li>SLA & Performance Metric Engineering</li>
-                </ul>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- Leadership Section -->
-    <section id="leadership" class="section">
-        <div class="section-header">
-            <h2 class="brand-font">Executive Leadership</h2>
-            <p>Guided by proven expertise in enterprise administration and strategic governance.</p>
-        </div>
-        <div class="leadership-wrapper">
-            <div class="leader-card">
-                <div class="leader-img-container">
-                    <img src="https://raw.githubusercontent.com/BigBelize/bigbelizeltd/main/brian-flowers.jpeg" 
-                         alt="Brian Flowers Sr." 
-                         class="leader-img"
-                         onerror="this.onerror=null; this.src='https://via.placeholder.com/400x400?text=Brian+Flowers+Sr.';">
+                <div class="px-2">
+                    <p class="text-2xl sm:text-3xl font-bold font-serif text-gold-400">US Time</p>
+                    <p class="text-xs sm:text-sm text-slate-400 mt-1">Central Time Zone Aligned</p>
                 </div>
-                <div class="leader-info">
-                    <h3 class="brand-font">Brian Flowers Sr.</h3>
-                    <span class="leader-title">Chairman & Executive Lead</span>
-                    <p class="leader-bio">Directing strategic expansion, legal compliance, and commercial partnerships for For Legacy Ltd., ensuring organizational alignment with global standards.</p>
+                <div class="px-2">
+                    <p class="text-2xl sm:text-3xl font-bold font-serif text-gold-400">24 / 7</p>
+                    <p class="text-xs sm:text-sm text-slate-400 mt-1">Omnichannel Operations</p>
+                </div>
+                <div class="px-2">
+                    <p class="text-2xl sm:text-3xl font-bold font-serif text-gold-400">ISO-Ready</p>
+                    <p class="text-xs sm:text-sm text-slate-400 mt-1">Governance & Compliance</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="section">
-        <div class="contact-container">
-            <div class="contact-info">
-                <h3 class="brand-font">Connect with Our Team</h3>
-                <p>Inquire about BPO partnership opportunities, operational consultations, or corporate service level agreements.</p>
+    <!-- SERVICES SECTION -->
+    <section id="services" class="py-20 sm:py-28 bg-[#F8F9FA] border-t border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-gold-600 text-xs font-bold tracking-widest uppercase">Our Core Services</span>
+                <h2 class="text-3xl sm:text-4xl font-serif font-bold text-charcoal-900 mt-2">Enterprise Solutions Engineered for Scaling</h2>
+                <p class="text-slate-600 mt-4 text-base">Integrating workforce intelligence with disciplined operational management to deliver measurable ROI.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
                 
-                <div class="info-detail">
-                    <strong>Corporate Headquarters</strong>
-                    <span>Lot 310, 50 Lords Bank Rd, Belize</span>
+                <!-- Service 1: BPO -->
+                <div class="bg-white rounded-2xl p-8 sm:p-10 border border-slate-200 hover:border-gold-500 transition-all duration-300 gold-border-glow flex flex-col justify-between group">
+                    <div>
+                        <div class="w-14 h-14 rounded-xl bg-charcoal-900 text-gold-500 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-headset"></i>
+                        </div>
+                        <div class="inline-block text-xs font-bold text-gold-600 uppercase tracking-wider mb-2">ISIC 8220</div>
+                        <h3 class="text-2xl font-serif font-bold text-charcoal-900 mb-4">Business Process Outsourcing (BPO)</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                            High-performance omnichannel call center and customer experience solutions designed for scaling organizations requiring flawless customer service and technical routing.
+                        </p>
+                        <ul class="space-y-3 text-xs sm:text-sm text-slate-600">
+                            <li class="flex items-start gap-2.5">
+                                <i class="fa-solid fa-angle-right text-gold-500 mt-1"></i>
+                                <span><strong>Customer Service Scaling:</strong> Scalable inbound/outbound support squads trained to deliver exceptional CSAT scores.</span>
+                            </li>
+                            <li class="flex items-start gap-2.5">
+                                <i class="fa-solid fa-angle-right text-gold-500 mt-1"></i>
+                                <span><strong>Technical Support Routing:</strong> Multi-tiered helpdesk resolution, ticket management, and rapid troubleshooting.</span>
+                            </li>
+                            <li class="flex items-start gap-2.5">
+                                <i class="fa-solid fa-angle-right text-gold-500 mt-1"></i>
+                                <span><strong>Specialized Multi-Channel Operations:</strong> Seamless chat, email, voice, and back-office administrative workflows.</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="mt-8 pt-6 border-t border-slate-100">
+                        <a href="#contact" class="text-xs font-bold text-charcoal-900 group-hover:text-gold-600 transition-colors inline-flex items-center gap-1">
+                            Explore BPO Capacity <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                        </a>
+                    </div>
                 </div>
 
-                <div class="info-detail">
-                    <strong>Official Inquiries</strong>
-                    <span>admin@forlegacyltd.com</span>
+                <!-- Service 2: Management Consultancy -->
+                <div class="bg-white rounded-2xl p-8 sm:p-10 border border-slate-200 hover:border-gold-500 transition-all duration-300 gold-border-glow flex flex-col justify-between group">
+                    <div>
+                        <div class="w-14 h-14 rounded-xl bg-charcoal-900 text-gold-500 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-briefcase"></i>
+                        </div>
+                        <div class="inline-block text-xs font-bold text-gold-600 uppercase tracking-wider mb-2">ISIC 7020</div>
+                        <h3 class="text-2xl font-serif font-bold text-charcoal-900 mb-4">Management Consultancy</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                            Strategic governance, advisory, and execution frameworks empowering corporate leadership to optimize processes and expand into strategic nearshore jurisdictions.
+                        </p>
+                        <ul class="space-y-3 text-xs sm:text-sm text-slate-600">
+                            <li class="flex items-start gap-2.5">
+                                <i class="fa-solid fa-angle-right text-gold-500 mt-1"></i>
+                                <span><strong>Corporate Strategy:</strong> Growth alignment, operational roadmapping, and competitive market positioning.</span>
+                            </li>
+                            <li class="flex items-start gap-2.5">
+                                <i class="fa-solid fa-angle-right text-gold-500 mt-1"></i>
+                                <span><strong>Operational Optimization:</strong> Workflow restructuring, SOP development, and efficiency audits.</span>
+                            </li>
+                            <li class="flex items-start gap-2.5">
+                                <i class="fa-solid fa-angle-right text-gold-500 mt-1"></i>
+                                <span><strong>Regulatory Compliance & Infrastructure:</strong> Guidance across tax, municipal licensing, labor governance, and physical entity setup.</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="mt-8 pt-6 border-t border-slate-100">
+                        <a href="#contact" class="text-xs font-bold text-charcoal-900 group-hover:text-gold-600 transition-colors inline-flex items-center gap-1">
+                            Schedule Executive Consultation <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                        </a>
+                    </div>
                 </div>
 
-                <div class="info-detail">
-                    <strong>Entity Registration</strong>
-                    <span>For Legacy Ltd. (Reg: 000060113)</span>
-                </div>
             </div>
-
-            <form class="contact-form" action="mailto:admin@forlegacyltd.com" method="post" enctype="text/plain">
-                <div class="form-group">
-                    <label for="name">Full Name</label>
-                    <input type="text" id="name" name="Name" required placeholder="John Doe">
-                </div>
-                <div class="form-group">
-                    <label for="email">Business Email</label>
-                    <input type="email" id="email" name="Email" required placeholder="john@company.com">
-                </div>
-                <div class="form-group">
-                    <label for="message">Message / Scope</label>
-                    <textarea id="message" name="Message" rows="4" required placeholder="Describe your service needs..."></textarea>
-                </div>
-                <button type="submit" class="btn-gold" style="width: 100%;">Submit Inquiry</button>
-            </form>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer>
-        <div class="footer-content">
-            <img src="https://raw.githubusercontent.com/BigBelize/bigbelizeltd/main/Letter%20Head.png" 
-                 alt="For Legacy Ltd. Logo" 
-                 class="footer-logo">
-            <p class="footer-legal">&copy; 2026 For Legacy Ltd. (Reg: 000060113). All rights reserved.</p>
-        </div>
-    </footer>
+    <!-- EXECUTIVE LEADERSHIP SECTION -->
+    <section id="leadership" class="py-20 sm:py-28 bg-white border-t border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-gold-600 text-xs font-bold tracking-widest uppercase">Executive Leadership</span>
+                <h2 class="text-3xl sm:text-4xl font-serif font-bold text-charcoal-900 mt-2">Governance & Executive Stewardship</h2>
+                <p class="text-slate-600 mt-4 text-base">Guided by experienced leadership dedicated to corporate integrity, operational excellence, and economic innovation.</p>
+            </div>
 
+            <!-- Leadership Spotlight: Brian Flowers Sr. -->
+            <div class="max-w-4xl mx-auto bg-charcoal-900 text-white rounded-2xl overflow-hidden shadow-2xl border border-gold-500/30">
+                <div class="grid grid-cols-1 md:grid-cols-12 items-stretch">
+                    
+                    <!-- Left Photo & Title Box -->
+                    <div class="md:col-span-5 bg-gradient-to-b from-charcoal-800 to-charcoal-950 p-8 flex flex-col justify-center items-center text-center border-b md:border-b-0 md:border-r border-gold-500/20">
+                        <div class="relative w-36 h-36 rounded-full p-1 bg-gradient-to-tr from-gold-500 via-gold-400 to-amber-200 shadow-xl mb-4">
+                            <img src="https://raw.githubusercontent.com/BigBelize/bigbelizeltd/main/brian-flowers.jpeg" alt="Brian Flowers Sr." class="w-full h-full object-cover rounded-full filter brightness-105" onerror="this.onerror=null; this.src='https://placehold.co/200x200/1A1A1A/D4AF37?text=Brian+Flowers+Sr';">
+                        </div>
+                        <h3 class="text-2xl font-serif font-bold text-white">Brian Flowers Sr.</h3>
+                        <p class="text-xs text-gold-400 font-semibold uppercase tracking-wider mt-1">Chairman & Executive Lead</p>
+                        <p class="text-[11px] text-slate-400 mt-1">For Legacy Ltd.</p>
+                    </div>
+
+                    <!-- Right Bio Content -->
+                    <div class="md:col-span-7 p-8 sm:p-10 flex flex-col justify-center">
+                        <h4 class="text-lg font-serif font-bold text-gold-400 mb-3">Strategic Leadership & Governance</h4>
+                        <p class="text-slate-300 text-sm leading-relaxed mb-6">
+                            Brian Flowers Sr. leads For Legacy Ltd. as Chairman and Executive Lead, providing primary strategic oversight, governance, and policy direction. With deep executive management expertise across commercial strategy and organizational expansion, he steers the company's nearshore BPO roadmap and advisory practice, ensuring sustainable growth and strict corporate compliance across international jurisdictions.
+                        </p>
+                        
+                        <div class="grid grid-cols-2 gap-4 text-xs pt-4 border-t border-slate-800">
+                            <div>
+                                <span class="text-slate-400 block">Focus Area:</span>
+                                <span class="text-slate-200 font-semibold">Strategic Governance & Expansion</span>
+                            </div>
+                            <div>
+                                <span class="text-slate-400 block">Jurisdiction:</span>
+                                <span class="text-slate-200 font-semibold">Belize & Global Nearshore</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ABOUT US & CORPORATE REGISTRATION SECTION -->
+    <section id="about" class="py-20 sm:py-28 bg-[#F8F9FA] border-t border-slate-200 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                
+                <!-- Left Column: Narrative -->
+                <div>
+                    <div class="inline-block text-gold-600 text-xs font-bold tracking-widest uppercase mb-2">Corporate Profile</div>
+                    <h2 class="text-3xl sm:text-4xl font-serif font-bold text-charcoal-900 tracking-tight leading-tight">
+                        Bridging Enterprise Ambition with Strategic Nearshore Talent
+                    </h2>
+                    <p class="mt-6 text-slate-600 leading-relaxed">
+                        <strong class="text-charcoal-900 font-semibold">For Legacy Ltd.</strong> is an executive management consultancy and high-performance Business Process Outsourcing (BPO) firm headquartered in Belize. We empower North American and global organizations to scale operational footprint seamlessly without sacrificing quality.
+                    </p>
+                    <p class="mt-4 text-slate-600 leading-relaxed">
+                        Leveraging Belize’s position as the primary official English-speaking country in Central America, we combine direct cultural affinity with rigorous SLA enforcement, operational efficiency, and low-friction workforce expansion.
+                    </p>
+
+                    <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div class="p-4 rounded-xl bg-white border-l-4 border-gold-500 shadow-sm">
+                            <h4 class="font-bold text-charcoal-900 text-sm">Cultural Alignment</h4>
+                            <p class="text-xs text-slate-500 mt-1">Deep familiarity with US consumer expectations and communication standards.</p>
+                        </div>
+                        <div class="p-4 rounded-xl bg-white border-l-4 border-gold-500 shadow-sm">
+                            <h4 class="font-bold text-charcoal-900 text-sm">SLA Optimization</h4>
+                            <p class="text-xs text-slate-500 mt-1">Data-driven analysis to elevate CSAT and minimize customer churn.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Corporate Registry Highlight -->
+                <div class="relative">
+                    <div class="absolute -inset-2 rounded-2xl bg-gradient-to-tr from-gold-500/20 to-charcoal-900/10 blur-xl opacity-70"></div>
+                    <div class="relative bg-charcoal-900 text-white rounded-2xl p-8 sm:p-10 border border-gold-500/30 shadow-2xl">
+                        
+                        <div class="flex items-center justify-between border-b border-slate-800 pb-6 mb-6">
+                            <div class="flex items-center gap-3">
+                                <img src="https://raw.githubusercontent.com/BigBelize/bigbelizeltd/main/Letter%20Head.png" alt="Logo" class="h-8 w-auto object-contain">
+                                <div>
+                                    <p class="text-xs text-gold-400 font-medium uppercase tracking-wider">Registered Corporate Entity</p>
+                                    <p class="text-xl font-bold font-serif text-white">For Legacy Ltd.</p>
+                                </div>
+                            </div>
+                            <span class="text-xs font-mono bg-charcoal-800 px-3 py-1 rounded text-slate-300 border border-slate-700">Reg: 000060113</span>
+                        </div>
+
+                        <ul class="space-y-4">
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-circle-check text-gold-500 mt-1"></i>
+                                <span class="text-sm text-slate-300"><strong class="text-white">ISIC 8220:</strong> Business Process Outsourcing & Call Centre Services</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-circle-check text-gold-500 mt-1"></i>
+                                <span class="text-sm text-slate-300"><strong class="text-white">ISIC 7020:</strong> Executive Management Consultancy & Strategic Operations</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-circle-check text-gold-500 mt-1"></i>
+                                <span class="text-sm text-slate-300"><strong class="text-white">Registered Address:</strong> Lot 310, 50 Lords Bank Rd, Belize</span>
+                            </li>
+                        </ul>
+
+                        <div class="mt-8 pt-6 border-t border-slate-800 flex items-center justify-between text-xs text-slate-400">
+                            <span>Governance & Regulatory Compliant</span>
+                            <span class="text-gold-400 font-semibold">Belize Jurisdiction</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT & FOOTER SECTION -->
+    <section id="contact" class="py-20 sm:py-28 bg-charcoal-950 text-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
+                
+                <!-- Contact Information Column -->
+                <div class="lg:col-span-5 flex flex-col justify-between">
+                    <div>
+                        <span class="text-gold-400 text-xs font-bold tracking-widest uppercase">Connect With Us</span>
+                        <h2 class="text-3xl sm:text-4xl font-serif font-bold text-white mt-2">Contact Executive Office</h2>
+                        <p class="text-slate-400 mt-4 text-sm leading-relaxed">
+                            Get in touch with our executive leadership team to discuss BPO capacity, management consultancy engagements, or enterprise partnerships.
+                        </p>
+
+                        <div class="mt-8 space-y-6">
+                            <div class="flex items-start gap-4">
+                                <div class="w-10 h-10 rounded-lg bg-gold-500/10 border border-gold-500/30 flex items-center justify-center text-gold-400 shrink-0">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-xs text-slate-400 uppercase font-semibold">Registered Physical Address</h4>
+                                    <p class="text-sm text-slate-200 mt-1">Lot 310, 50 Lords Bank Rd,<br>Belize</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-4">
+                                <div class="w-10 h-10 rounded-lg bg-gold-500/10 border border-gold-500/30 flex items-center justify-center text-gold-400 shrink-0">
+                                    <i class="fa-solid fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-xs text-slate-400 uppercase font-semibold">Corporate Communications</h4>
+                                    <p class="text-sm text-slate-200 mt-1">admin@forlegacyltd.com</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-4">
+                                <div class="w-10 h-10 rounded-lg bg-gold-500/10 border border-gold-500/30 flex items-center justify-center text-gold-400 shrink-0">
+                                    <i class="fa-solid fa-building"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-xs text-slate-400 uppercase font-semibold">Corporate Registration</h4>
+                                    <p class="text-sm text-slate-200 mt-1">Reg No. 000060113</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Registration Badge -->
+                    <div class="mt-12 p-4 rounded-xl bg-charcoal-900 border border-slate-800 text-xs text-slate-400">
+                        <p><strong class="text-gold-400">For Legacy Ltd.</strong> | Registration No. 000060113</p>
+                        <p class="mt-0.5">Duly incorporated under the Belize Companies Act.</p>
+                    </div>
+                </div>
+
+                <!-- Contact / Inquiry Form -->
+                <div class="lg:col-span-7 bg-charcoal-900 p-8 sm:p-10 rounded-2xl border border-gold-500/30 shadow-2xl">
+                    <h3 class="text-xl font-serif font-bold text-white mb-6">Send an Inquiry</h3>
+                    
+                    <form id="contact-form" onsubmit="handleFormSubmit(event)" class="space-y-4">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-medium text-slate-300 mb-1">Full Name *</label>
+                                <input type="text" required class="w-full px-4 py-3 rounded-lg bg-charcoal-950 border border-slate-800 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-gold-500 transition-colors" placeholder="e.g. Sarah Jenkins">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-medium text-slate-300 mb-1">Company / Organization *</label>
+                                <input type="text" required class="w-full px-4 py-3 rounded-lg bg-charcoal-950 border border-slate-800 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-gold-500 transition-colors" placeholder="e.g. Apex Global Systems">
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-medium text-slate-300 mb-1">Email Address *</label>
+                                <input type="email" required class="w-full px-4 py-3 rounded-lg bg-charcoal-950 border border-slate-800 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-gold-500 transition-colors" placeholder="name@company.com">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-medium text-slate-300 mb-1">Service Interest</label>
+                                <select class="w-full px-4 py-3 rounded-lg bg-charcoal-950 border border-slate-800 text-white text-sm focus:outline-none focus:border-gold-500 transition-colors">
+                                    <option value="bpo">BPO & Call Center Services (ISIC 8220)</option>
+                                    <option value="consultancy">Management Consultancy (ISIC 7020)</option>
+                                    <option value="other">General Partnership Inquiry</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-medium text-slate-300 mb-1">Message *</label>
+                            <textarea rows="4" required class="w-full px-4 py-3 rounded-lg bg-charcoal-950 border border-slate-800 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-gold-500 transition-colors" placeholder="Describe your operational scope or consultancy requirements..."></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full py-4 rounded-lg bg-gold-500 text-charcoal-900 font-bold text-sm hover:bg-gold-400 transition-all shadow-lg shadow-gold-500/20">
+                            Submit Inquiry
+                        </button>
+                    </form>
+
+                    <!-- Success Alert Box -->
+                    <div id="form-success" class="hidden mt-4 p-4 rounded-lg bg-emerald-900/50 border border-emerald-500 text-emerald-200 text-xs text-center">
+                        <i class="fa-solid fa-circle-check text-emerald-400 mr-2 text-sm"></i>
+                        Thank you for reaching out! Your inquiry has been routed to admin@forlegacyltd.com. We will respond within 24 hours.
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Dark Footer -->
+            <div class="mt-20 pt-8 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+                <p>&copy; 2026 For Legacy Ltd. All rights reserved. Registered Entity No. 000060113.</p>
+                <div class="flex gap-6">
+                    <a href="#home" class="hover:text-gold-400 transition-colors">Home</a>
+                    <a href="#services" class="hover:text-gold-400 transition-colors">Services</a>
+                    <a href="#leadership" class="hover:text-gold-400 transition-colors">Leadership</a>
+                    <a href="#about" class="hover:text-gold-400 transition-colors">About Us</a>
+                    <a href="#contact" class="hover:text-gold-400 transition-colors">Contact</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- JavaScript Navigation & Form Logic -->
+    <script>
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        mobileNavLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            const form = document.getElementById('contact-form');
+            const successMsg = document.getElementById('form-success');
+            
+            form.reset();
+            successMsg.classList.remove('hidden');
+            
+            setTimeout(() => {
+                successMsg.classList.add('hidden');
+            }, 6000);
+        }
+    </script>
 </body>
 </html>
